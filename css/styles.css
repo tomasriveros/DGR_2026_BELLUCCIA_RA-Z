@@ -199,31 +199,62 @@ main > section {
 }
 
 /* =========================================================
-   HERO
+   HERO — imagen de fondo full-bleed
    ========================================================= */
 
 .hero {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-  padding: 3rem 1.5rem 4rem;
-  max-width: var(--max-w);
-  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 88vh;
+  padding: 6rem 1.5rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(43, 33, 24, 0.6) 0%,
+    rgba(43, 33, 24, 0.58) 50%,
+    rgba(43, 33, 24, 0.75) 100%
+  );
 }
 
 .hero__copy {
-  max-width: 640px;
+  max-width: 680px;
   margin: 0 auto;
   text-align: center;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
 }
 
 .hero__title {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(2.3rem, 6vw, 3.6rem);
+  font-size: clamp(2.3rem, 6vw, 3.8rem);
   line-height: 1.08;
   letter-spacing: -0.01em;
   margin-bottom: 1.4rem;
+}
+
+.hero__title--light {
+  color: var(--bg);
 }
 
 .hero__title--accent {
@@ -234,9 +265,12 @@ main > section {
 .hero__subtitle {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: color-mix(in srgb, var(--ink) 78%, transparent);
   max-width: 540px;
   margin: 0 auto 2rem;
+}
+
+.hero__subtitle--light {
+  color: color-mix(in srgb, var(--bg) 90%, transparent);
 }
 
 .hero__actions {
@@ -244,6 +278,23 @@ main > section {
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
+}
+
+.btn--ghost-light {
+  color: var(--bg);
+}
+
+.btn--ghost-light:hover {
+  color: var(--accent);
+}
+
+/* =========================================================
+   REVEAL — sección dedicada al comparador antes/después
+   ========================================================= */
+
+.reveal {
+  max-width: var(--max-w);
+  margin: 0 auto;
 }
 
 /* =========================================================
@@ -914,27 +965,6 @@ main > section {
 }
 
 @media (min-width: 960px) {
-  .hero {
-    grid-template-columns: 1fr 1.15fr;
-    align-items: center;
-    padding-top: 5rem;
-    padding-bottom: 6rem;
-  }
-
-  .hero__copy {
-    text-align: left;
-    margin: 0;
-  }
-
-  .hero__subtitle {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .hero__actions {
-    justify-content: flex-start;
-  }
-
   .nav {
     padding: 1.5rem 3rem;
   }

@@ -30,43 +30,27 @@
 
   <main id="inicio">
 
-    <!-- ===================== HERO: SLIDER ANTES/DESPUÉS ===================== -->
+    <!-- ===================== HERO: IMAGEN DE FONDO FULL-BLEED ===================== -->
     <section class="hero" aria-label="Presentación">
+      <div class="hero__bg">
+        <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?w=1600&q=80" alt="Mueble restaurado con laca contemporánea en un espacio luminoso" loading="eager">
+      </div>
+      <div class="hero__scrim"></div>
       <div class="hero__copy">
-        <p class="eyebrow">Cursos online de restauración</p>
-        <h1 class="hero__title">
+        <p class="eyebrow eyebrow--light">Cursos online de restauración</p>
+        <h1 class="hero__title hero__title--light">
           Ese mueble<br>
           tiene una historia.<br>
           <span class="hero__title--accent">Aprendé a continuarla.</span>
         </h1>
-        <p class="hero__subtitle">
+        <p class="hero__subtitle hero__subtitle--light">
           RAÍZ es una academia de restauración para quienes heredaron algo más que un mueble.
           Te enseñamos a recuperar la estructura y reinventar el acabado, sin perder lo que ese
           objeto significa.
         </p>
         <div class="hero__actions">
           <a href="#cursos" class="btn btn--primary">Quiero anotarme</a>
-          <a href="#proceso" class="btn btn--ghost">Cómo funciona</a>
-        </div>
-      </div>
-
-      <div class="before-after" id="beforeAfter" role="group" aria-label="Comparación antes y después de una restauración">
-        <div class="before-after__frame">
-          <div class="before-after__img before-after__img--before">
-            <img src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=900&q=80" alt="Cómoda antigua sin restaurar, con barniz oscuro y desgastado" loading="eager">
-            <span class="before-after__tag before-after__tag--before">Antes</span>
-          </div>
-          <div class="before-after__img before-after__img--after" id="afterImg">
-            <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?w=900&q=80" alt="Misma cómoda restaurada con laca color bermellón y herrajes nuevos" loading="eager">
-            <span class="before-after__tag before-after__tag--after">Después</span>
-          </div>
-          <div class="before-after__divider" id="divider" style="left: 50%;">
-            <button class="before-after__handle" id="handle" aria-label="Arrastrar para comparar antes y después" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M8 5l-6 7 6 7M16 5l6 7-6 7"/>
-              </svg>
-            </button>
-          </div>
+          <a href="#proceso" class="btn btn--ghost btn--ghost-light">Cómo funciona</a>
         </div>
       </div>
     </section>
@@ -80,6 +64,37 @@
           y en intervenir el resto con un criterio totalmente actual.
         </p>
         <p class="philosophy__signature">— El equipo de RAÍZ</p>
+      </div>
+    </section>
+
+    <!-- ===================== COMPARACIÓN ANTES / DESPUÉS ===================== -->
+    <section class="reveal">
+      <div class="section-head">
+        <p class="eyebrow">Mirá la diferencia</p>
+        <h2 class="section-title">El mismo mueble, dos momentos</h2>
+        <p class="section-desc">
+          Arrastrá para ver lo que es posible cuando se respeta la estructura y se anima el acabado.
+        </p>
+      </div>
+
+      <div class="before-after" id="beforeAfter" role="group" aria-label="Comparación antes y después de una restauración">
+        <div class="before-after__frame">
+          <div class="before-after__img before-after__img--before">
+            <img src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=900&q=80" alt="Cómoda antigua sin restaurar, con barniz oscuro y desgastado" loading="lazy">
+            <span class="before-after__tag before-after__tag--before">Antes</span>
+          </div>
+          <div class="before-after__img before-after__img--after" id="afterImg">
+            <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?w=900&q=80" alt="Misma cómoda restaurada con laca color bermellón y herrajes nuevos" loading="lazy">
+            <span class="before-after__tag before-after__tag--after">Después</span>
+          </div>
+          <div class="before-after__divider" id="divider" style="left: 50%;">
+            <button class="before-after__handle" id="handle" aria-label="Arrastrar para comparar antes y después" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M8 5l-6 7 6 7M16 5l6 7-6 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
 
