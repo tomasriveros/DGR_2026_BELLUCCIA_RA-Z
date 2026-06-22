@@ -8,8 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Corrección en la query de Fraunces para dar soporte nativo a las cursivas (ital) -->
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400..700&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -31,41 +30,61 @@
 
   <main id="inicio">
 
-    <!-- ===================== HERO: SLIDER ANTES/DESPUÉS ===================== -->
+    <!-- ===================== HERO: IMAGEN DE FONDO FULL-BLEED ===================== -->
     <section class="hero" aria-label="Presentación">
-<<<<<<< HEAD
-=======
       <div class="hero__bg">
-        <img src="assets/hero1.jpeg" alt="Mueble restaurado con laca contemporánea en un espacio luminoso" loading="eager">
+        <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?w=1600&q=80" alt="Mueble restaurado con laca contemporánea en un espacio luminoso" loading="eager">
       </div>
       <div class="hero__scrim"></div>
->>>>>>> 4e9e0956d084a6a57d2412e49ed96bc069bfdba1
       <div class="hero__copy">
-        <p class="eyebrow">Cursos online de restauración</p>
-        <h1 class="hero__title">
+        <p class="eyebrow eyebrow--light">Cursos online de restauración</p>
+        <h1 class="hero__title hero__title--light">
           Ese mueble<br>
           tiene una historia.<br>
           <span class="hero__title--accent">Aprendé a continuarla.</span>
         </h1>
-        <p class="hero__subtitle">
+        <p class="hero__subtitle hero__subtitle--light">
           RAÍZ es una academia de restauración para quienes heredaron algo más que un mueble.
           Te enseñamos a recuperar la estructura y reinventar el acabado, sin perder lo que ese
           objeto significa.
         </p>
         <div class="hero__actions">
           <a href="#cursos" class="btn btn--primary">Quiero anotarme</a>
-          <a href="#proceso" class="btn btn--ghost">Cómo funciona</a>
+          <a href="#proceso" class="btn btn--ghost btn--ghost-light">Cómo funciona</a>
         </div>
+      </div>
+    </section>
+
+    <!-- ===================== MARCA / FILOSOFÍA ===================== -->
+    <section class="philosophy">
+      <div class="philosophy__inner">
+        <p class="philosophy__text">
+          No somos una carpintería de los noventa, llena de polvo y barniz oscuro pensado para
+          esconder los años. Creemos en dejar ver la veta, la marca, el rasguño que cuenta algo —
+          y en intervenir el resto con un criterio totalmente actual.
+        </p>
+        <p class="philosophy__signature">— El equipo de RAÍZ</p>
+      </div>
+    </section>
+
+    <!-- ===================== COMPARACIÓN ANTES / DESPUÉS ===================== -->
+    <section class="reveal">
+      <div class="section-head">
+        <p class="eyebrow">Mirá la diferencia</p>
+        <h2 class="section-title">El mismo mueble, dos momentos</h2>
+        <p class="section-desc">
+          Arrastrá para ver lo que es posible cuando se respeta la estructura y se anima el acabado.
+        </p>
       </div>
 
       <div class="before-after" id="beforeAfter" role="group" aria-label="Comparación antes y después de una restauración">
         <div class="before-after__frame">
           <div class="before-after__img before-after__img--before">
-            <img src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=900&q=80" alt="Cómoda antigua sin restaurar, con barniz oscuro y desgastado" loading="eager">
+            <img src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=900&q=80" alt="Cómoda antigua sin restaurar, con barniz oscuro y desgastado" loading="lazy">
             <span class="before-after__tag before-after__tag--before">Antes</span>
           </div>
           <div class="before-after__img before-after__img--after" id="afterImg">
-            <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?w=900&q=80" alt="Misma cómoda restaurada con laca color bermellón y herrajes nuevos" loading="eager">
+            <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?w=900&q=80" alt="Misma cómoda restaurada con laca color bermellón y herrajes nuevos" loading="lazy">
             <span class="before-after__tag before-after__tag--after">Después</span>
           </div>
           <div class="before-after__divider" id="divider" style="left: 50%;">
@@ -78,19 +97,6 @@
         </div>
       </div>
     </section>
-
-    <!-- ===================== MARCA / FILOSOFÍA ===================== -->
-    <!-- Mejora de accesibilidad y semántica: Cambiado a blockquote -->
-    <blockquote class="philosophy">
-      <div class="philosophy__inner">
-        <p class="philosophy__text">
-          No somos una carpintería de los noventa, llena de polvo y barniz oscuro pensado para
-          esconder los años. Creemos en dejar ver la veta, la marca, el rasguño que cuenta algo —
-          y en intervenir el resto con un criterio totalmente actual.
-        </p>
-        <cite class="philosophy__signature">— El equipo de RAÍZ</cite>
-      </div>
-    </blockquote>
 
     <!-- ===================== PROCESO: STEPPER DE ANILLOS ===================== -->
     <section class="process" id="proceso">
@@ -247,8 +253,7 @@
           <form class="bento__email-form" id="waitlistForm">
             <label for="waitlistEmail" class="sr-only">Tu email</label>
             <input type="email" id="waitlistEmail" name="email" placeholder="tu@email.com" required>
-            <!-- Mejora de accesibilidad: Contexto claro al botón de envío -->
-            <button type="submit" class="btn btn--accent" aria-label="Avisame cuando se lancen los Muebles Cápsula">Avisame</button>
+            <button type="submit" class="btn btn--accent">Avisame</button>
           </form>
           <p class="bento__form-success" id="formSuccess" hidden>¡Listo! Te escribimos apenas lancemos.</p>
         </div>
