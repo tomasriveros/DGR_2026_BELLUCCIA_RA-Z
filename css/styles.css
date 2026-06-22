@@ -169,6 +169,15 @@ main > section {
   font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1;
   color: var(--bg); text-transform: uppercase;
 }
+.reasons__img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 1rem;
+  border: var(--border-w) solid var(--bg);
+  margin-top: 1.5rem;
+  display: block;
+}
 .reasons__title + * { margin-top: 0.5rem; }
 .reasons__list { display: flex; flex-direction: column; gap: 1.75rem; }
 .reasons__item {
