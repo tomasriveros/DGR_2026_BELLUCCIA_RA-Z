@@ -5,7 +5,7 @@
   function initWoodCounter() {
     const el = document.getElementById('woodCounter');
     if (!el) return;
-    const target = 4280, duration = 1400;
+    const target = 266, duration = 1400;
     let hasRun = false;
     function run() {
       if (hasRun) return; hasRun = true;
