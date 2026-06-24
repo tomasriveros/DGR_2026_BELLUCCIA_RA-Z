@@ -435,3 +435,21 @@ main > section {
   main > section { padding-left: 3rem; padding-right: 3rem; }
   .gallery__grid { grid-auto-rows: 280px; }
 }
+
+@media (max-width: 768px) {
+
+  .hero {
+    justify-content: center;
+    padding: 5rem 1.5rem;
+  }
+
+  .hero__copy {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+}
