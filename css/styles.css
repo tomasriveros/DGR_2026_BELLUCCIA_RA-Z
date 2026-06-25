@@ -452,4 +452,8 @@ main > section {
     justify-content: center;
   }
 
+   .hero__bg img {
+    object-position: 20% center;
+}
+
 }
