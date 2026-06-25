@@ -19,7 +19,7 @@
   --shadow-lg:     8px 8px 0px 0px var(--ink);
   --border-w:      2px;
   --max-w:         1240px;
-  --space-section: clamp(4rem, 8vw, 7rem);
+  --space-section: clamp(3rem, 6vw, 5rem);
 }
 
 body {
@@ -204,13 +204,14 @@ main > section {
 .reasons__item p { color: color-mix(in srgb, var(--bg) 75%, transparent); font-size: 0.97rem; line-height: 1.6; }
 
 /* =========================================================
-   4. CURSOS — grid de 3 tarjetas
+   4. CURSOS — pricing cards
    ========================================================= */
 .courses { max-width: var(--max-w); margin: 0 auto; }
 .courses__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 1.25rem;
+  align-items: start;
 }
 .course-card {
   display: flex; flex-direction: column;
@@ -220,11 +221,37 @@ main > section {
   background: var(--bg);
   box-shadow: var(--shadow-sm);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
 }
 .course-card:hover {
   transform: translate(-3px,-3px);
   box-shadow: var(--shadow-md);
 }
+
+/* Tarjeta destacada */
+.course-card--featured {
+  background: var(--ink);
+  color: var(--bg);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-6px);
+}
+.course-card--featured:hover {
+  transform: translateY(-6px) translate(-3px,-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Badge "más popular" */
+.course-card__badge {
+  position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+  font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.35rem 1rem; border-radius: 0 0 0.75rem 0.75rem;
+  background: var(--accent); color: var(--bg);
+  border: var(--border-w) solid var(--ink);
+  border-top: none; white-space: nowrap;
+}
+
+/* Imagen */
 .course-card__img-wrap {
   position: relative;
   aspect-ratio: 16/9;
@@ -240,25 +267,66 @@ main > section {
   font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600;
   letter-spacing: 0.08em; text-transform: uppercase;
   padding: 0.35rem 0.75rem; border-radius: 999px;
-  background: var(--accent-dark); color: var(--bg);
+  background: var(--bg); color: var(--ink);
   border: 1.5px solid var(--ink);
 }
+.course-card--featured .course-card__tag {
+  background: var(--accent); color: var(--bg); border-color: var(--ink);
+}
+
+/* Cuerpo */
 .course-card__body {
   display: flex; flex-direction: column; gap: 0.75rem;
   padding: 1.5rem; flex-grow: 1;
 }
 .course-card__title {
   font-family: var(--font-display); font-weight: 600;
-  font-size: 1.4rem; line-height: 1.2;
+  font-size: 1.35rem; line-height: 1.2;
 }
 .course-card__desc {
   font-size: 0.95rem; line-height: 1.6;
-  color: color-mix(in srgb, var(--ink) 75%, transparent);
+  color: color-mix(in srgb, var(--ink) 72%, transparent);
   flex-grow: 1;
 }
+.course-card--featured .course-card__desc {
+  color: color-mix(in srgb, var(--bg) 75%, transparent);
+}
+
+/* Divisor */
+.course-card__divider {
+  height: 1px;
+  background: color-mix(in srgb, var(--ink) 15%, transparent);
+  margin: 0.25rem 0;
+}
+.course-card--featured .course-card__divider {
+  background: color-mix(in srgb, var(--bg) 20%, transparent);
+}
+
+/* Features */
+.course-card__features {
+  display: flex; flex-direction: column; gap: 0.55rem;
+  list-style: none; margin: 0; padding: 0;
+}
+.course-card__features li {
+  display: flex; align-items: flex-start; gap: 0.6rem;
+  font-size: 0.9rem; line-height: 1.4;
+}
+.course-card__features li::before {
+  content: "✔";
+  color: var(--accent); font-size: 0.78rem;
+  flex-shrink: 0; margin-top: 0.1rem;
+}
+.course-card--featured .course-card__features li::before {
+  color: var(--accent);
+}
+
+/* Botón */
 .course-card__btn {
-  margin-top: 0.5rem;
-  align-self: flex-start;
+  margin-top: 0.75rem;
+  width: 100%; text-align: center;
+}
+.course-card--featured .course-card__btn {
+  background: var(--accent); color: var(--bg); border-color: var(--ink);
 }
 
 /* =========================================================
@@ -427,7 +495,7 @@ main > section {
 @media (min-width: 700px) {
   .why { grid-template-columns: 1fr 1fr; align-items: center; }
   .reasons__inner { grid-template-columns: 1fr 1fr; }
-  .courses__grid { grid-template-columns: repeat(3, 1fr); }
+  .courses__grid { grid-template-columns: repeat(3, 1fr); align-items: start; }
   .transformations__grid { grid-template-columns: repeat(3,1fr); }
   .testimonials__grid { grid-template-columns: repeat(3,1fr); }
   .foryou__grid { grid-template-columns: repeat(2,1fr); }
