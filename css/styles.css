@@ -144,7 +144,7 @@ main > section {
 .why__text { max-width: 560px; }
 .why__title {
   font-family: var(--font-display); font-weight: 600;
-  font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.05;
+  font-size: clamp(2.4rem, 5vw, 2.8rem); line-height: 1.05;
   text-transform: uppercase; margin-bottom: 1.5rem;
 }
 .why__body { font-size: 1.1rem; line-height: 1.7; color: color-mix(in srgb, var(--ink) 80%, transparent); }
