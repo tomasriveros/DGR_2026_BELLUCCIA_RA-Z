@@ -129,7 +129,7 @@ main > section {
   text-transform: uppercase;
 }
 .hero__title--light  { color: #ffffff; }
-.hero__title--accent { color: white; font-style: italic; }
+.hero__title--accent { color: #9b602c; font-style: italic; }
 .hero__subtitle { font-size: 1.1rem; line-height: 1.6; max-width: 540px; margin: 0 0 2rem; }
 .hero__subtitle--light { color: color-mix(in srgb, var(--bg) 90%, transparent); }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: flex-start; }
