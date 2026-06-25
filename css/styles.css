@@ -358,15 +358,16 @@ main > section {
 /* =========================================================
    6. ¿ES PARA MÍ?
    ========================================================= */
-.foryou { background: var(--bg-soft); border-top: var(--border-w) solid var(--ink); border-bottom: var(--border-w) solid var(--ink); }
-.foryou__grid { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 0; }
+.foryou { background: var(--bg); border-top: var(--border-w) solid var(--ink); border-bottom: var(--border-w) solid var(--ink); }
+.foryou__grid { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 0; border: var(--border-w) solid var(--ink); border-radius: 1.25rem; overflow: hidden; }
 .foryou__block {
   padding: 2rem 1.5rem;
   border-bottom: var(--border-w) solid var(--ink);
   transition: background 0.15s ease;
+  background: var(--bg);
 }
 .foryou__block:last-child { border-bottom: none; }
-.foryou__block:hover { background: var(--bg); }
+.foryou__block:hover { background: var(--bg-soft); }
 .foryou__block h3 {
   font-family: var(--font-display); font-size: 1.35rem; font-weight: 600;
   margin-bottom: 0.6rem;
@@ -495,12 +496,13 @@ main > section {
 @media (min-width: 700px) {
   .why { grid-template-columns: 1fr 1fr; align-items: center; }
   .reasons__inner { grid-template-columns: 1fr 1fr; }
-  .courses__grid { grid-template-columns: repeat(3, 1fr); align-items: start; }
+  .courses__grid { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
   .transformations__grid { grid-template-columns: repeat(3,1fr); }
   .testimonials__grid { grid-template-columns: repeat(3,1fr); }
   .foryou__grid { grid-template-columns: repeat(2,1fr); }
-  .foryou__block { border-right: var(--border-w) solid var(--ink); }
+  .foryou__block { border-right: var(--border-w) solid var(--ink); border-bottom: var(--border-w) solid var(--ink); }
   .foryou__block:nth-child(2n) { border-right: none; }
+  .foryou__block:nth-last-child(-n+2) { border-bottom: none; }
 
   .bento__item--main  { grid-column: span 2; }
   .bento__item--stat  { grid-column: span 2; }
