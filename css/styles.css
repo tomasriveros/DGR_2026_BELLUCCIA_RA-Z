@@ -19,7 +19,7 @@
   --shadow-lg:     8px 8px 0px 0px var(--ink);
   --border-w:      2px;
   --max-w:         1240px;
-  --space-section: clamp(4rem, 8vw, 7rem);
+  --space-section: clamp(3rem, 6vw, 5rem);
 }
 
 body {
