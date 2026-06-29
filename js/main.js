@@ -75,10 +75,35 @@
     update();
   }
 
+  /* Acordeón FAQ */
+  function initFaq() {
+    const buttons = document.querySelectorAll('.faq__question');
+    if (!buttons.length) return;
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        const answerId = btn.getAttribute('aria-controls');
+        const answer = document.getElementById(answerId);
+        // Cerrar todos
+        buttons.forEach(b => {
+          b.setAttribute('aria-expanded', 'false');
+          const a = document.getElementById(b.getAttribute('aria-controls'));
+          if (a) a.hidden = true;
+        });
+        // Abrir el clickeado (si estaba cerrado)
+        if (!isOpen) {
+          btn.setAttribute('aria-expanded', 'true');
+          if (answer) answer.hidden = false;
+        }
+      });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initWoodCounter();
     initWaitlist();
     initScrollAnimations();
     initCrossfade();
+    initFaq();
   });
 })();
