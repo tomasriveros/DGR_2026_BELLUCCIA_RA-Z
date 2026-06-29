@@ -1,0 +1,346 @@
+/* =========================================================
+   curso.css — estilos exclusivos de la página del curso
+   Hereda toda la identidad visual de styles.css
+   ========================================================= */
+
+main > section {
+  padding: var(--space-section) 1.5rem;
+}
+
+/* =========================================================
+   1. HERO
+   ========================================================= */
+.cp-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 90vh;
+  padding: 4rem 1.5rem 3rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.cp-hero__bg { position: absolute; inset: 0; z-index: -2; }
+.cp-hero__bg img { width: 100%; height: 100%; object-fit: cover; }
+
+.cp-hero__scrim {
+  position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(
+    to top,
+    rgba(43,33,24,0.92) 0%,
+    rgba(43,33,24,0.55) 50%,
+    rgba(43,33,24,0.3) 100%
+  );
+}
+
+.cp-hero__copy {
+  max-width: var(--max-w);
+  width: 100%;
+  margin: 0 auto;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.2);
+}
+
+.cp-hero__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--bg);
+  margin-bottom: 1.25rem;
+}
+
+.cp-hero__subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--bg) 88%, transparent);
+  max-width: 560px;
+  margin-bottom: 2rem;
+}
+
+.cp-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.cp-hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid color-mix(in srgb, var(--bg) 25%, transparent);
+}
+
+.cp-hero__stat {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: color-mix(in srgb, var(--bg) 85%, transparent);
+}
+
+.cp-hero__stat svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   2. ¿ESTE CURSO ES PARA VOS?
+   ========================================================= */
+.cp-for { max-width: var(--max-w); margin: 0 auto; }
+
+.cp-for__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.cp-for__image {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  border: var(--border-w) solid var(--ink);
+  box-shadow: var(--shadow-lg);
+}
+
+.cp-for__image img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+.cp-for__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 1.75rem;
+}
+
+.cp-for__title em {
+  font-style: italic;
+  color: var(--accent-dark);
+}
+
+.cp-for__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.cp-for__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.cp-for__check {
+  color: var(--accent-dark);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.cp-for__callout {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--ink) 75%, transparent);
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* =========================================================
+   3. PROGRAMA — línea de tiempo vertical
+   ========================================================= */
+.cp-program { max-width: 800px; margin: 0 auto; }
+
+.cp-program__timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.cp-program__timeline::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+.cp-program__item {
+  display: flex;
+  gap: 1.75rem;
+  align-items: flex-start;
+  padding: 2rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+  position: relative;
+}
+
+.cp-program__item:last-child {
+  border-bottom: none;
+}
+
+.cp-program__num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--ink);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: var(--border-w) solid var(--ink);
+  position: relative;
+  z-index: 1;
+}
+
+.cp-program__content h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  padding-top: 0.75rem;
+}
+
+.cp-program__content p {
+  font-size: 0.97rem;
+  line-height: 1.65;
+  color: color-mix(in srgb, var(--ink) 75%, transparent);
+}
+
+/* =========================================================
+   4. ANTES Y DESPUÉS
+   ========================================================= */
+.cp-transforms { max-width: var(--max-w); margin: 0 auto; }
+
+.cp-transforms__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.cp-transform { display: flex; flex-direction: column; gap: 0.85rem; }
+
+.cp-transform__images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.cp-transform__img-wrap {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border: var(--border-w) solid var(--ink);
+  border-radius: 0.75rem;
+}
+
+.cp-transform__img-wrap img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+.cp-transform__label {
+  position: absolute;
+  bottom: 0.75rem; left: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--wood);
+  border: 1.5px solid var(--ink);
+}
+
+.cp-transform__label--after {
+  background: var(--accent-dark);
+  color: var(--bg);
+}
+
+.cp-transform__caption {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: color-mix(in srgb, var(--ink) 60%, transparent);
+}
+
+/* =========================================================
+   5. CTA FINAL
+   ========================================================= */
+.cp-cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 65vh;
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.cp-cta__bg { position: absolute; inset: 0; z-index: -2; }
+.cp-cta__bg img { width: 100%; height: 100%; object-fit: cover; }
+
+.cp-cta__scrim {
+  position: absolute; inset: 0; z-index: -1;
+  background: rgba(43,33,24,0.74);
+}
+
+.cp-cta__copy {
+  padding: 3rem 1.5rem;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.3);
+}
+
+.cp-cta__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.1;
+  color: var(--bg);
+  margin-bottom: 1rem;
+}
+
+.cp-cta__sub {
+  font-size: 1.05rem;
+  color: color-mix(in srgb, var(--bg) 82%, transparent);
+  margin-bottom: 2.5rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (min-width: 700px) {
+  .cp-transforms__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 860px) {
+  .cp-for__inner { grid-template-columns: 380px 1fr; }
+  .cp-program__timeline::before { left: 28px; }
+}
+
+@media (min-width: 960px) {
+  .cp-hero { padding-left: 3rem; padding-right: 3rem; }
+  main > section { padding-left: 3rem; padding-right: 3rem; }
+}
