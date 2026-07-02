@@ -63,10 +63,8 @@
     function update() {
       const rect = container.getBoundingClientRect();
       const windowH = window.innerHeight;
-      // Empieza a cruzar cuando el centro del contenedor entra en pantalla
-      // y termina cuando el contenedor ya pasó la mitad de la pantalla
-      const start = windowH * 0.6;
-      const end   = windowH * 0.1;
+      const start = windowH * 0.85;
+      const end   = windowH * 0.4;
       const progress = Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
       imgAfter.style.opacity = progress;
     }
