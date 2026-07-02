@@ -140,14 +140,16 @@ main > section {
 .why {
   max-width: var(--max-w); margin: 0 auto;
   display: grid; grid-template-columns: 1fr; gap: 3rem;
+  min-height: 100vh; min-height: 100dvh;
+  align-content: center;
 }
-.why__text { max-width: 560px; }
+.why__text { max-width: 640px; }
 .why__title {
   font-family: var(--font-display); font-weight: 600;
-  font-size: clamp(2.4rem, 5vw, 2.8rem); line-height: 1.05;
-  text-transform: uppercase; margin-bottom: 1.5rem;
+  font-size: clamp(2.8rem, 6vw, 4rem); line-height: 1.02;
+  text-transform: uppercase; margin-bottom: 1.75rem;
 }
-.why__body { font-size: 1.1rem; line-height: 1.7; color: color-mix(in srgb, var(--ink) 80%, transparent); }
+.why__body { font-size: 1.3rem; line-height: 1.7; color: color-mix(in srgb, var(--ink) 80%, transparent); }
 .why__image {
   width: 100%; aspect-ratio: 4/3; overflow: hidden;
   border: var(--border-w) solid var(--ink); border-radius: 1.25rem;
@@ -164,44 +166,6 @@ main > section {
   opacity: 0;
   transition: opacity 0.1s linear;
 }
-
-/* =========================================================
-   3. ¿POR QUÉ RAÍZ?
-   ========================================================= */
-.reasons { background: var(--ink); }
-.reasons__inner {
-  max-width: var(--max-w); margin: 0 auto;
-  display: grid; grid-template-columns: 1fr; gap: 3rem;
-}
-.reasons__head { }
-.reasons__title {
-  font-family: var(--font-display); font-weight: 600;
-  font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1;
-  color: var(--bg); text-transform: uppercase;
-}
-.reasons__img {
-  width: 100%;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  border-radius: 1rem;
-  border: var(--border-w) solid var(--bg);
-  margin-top: 1.5rem;
-  display: block;
-}
-.reasons__title + * { margin-top: 0.5rem; }
-.reasons__list { display: flex; flex-direction: column; gap: 1.75rem; }
-.reasons__item {
-  display: flex; gap: 1.25rem; align-items: flex-start;
-  padding-bottom: 1.75rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--bg) 15%, transparent);
-}
-.reasons__item:last-child { border-bottom: none; padding-bottom: 0; }
-.reasons__check {
-  font-size: 1.1rem; color: var(--accent); flex-shrink: 0;
-  margin-top: 0.15rem;
-}
-.reasons__item strong { display: block; color: var(--bg); font-size: 1.08rem; margin-bottom: 0.35rem; }
-.reasons__item p { color: color-mix(in srgb, var(--bg) 75%, transparent); font-size: 0.97rem; line-height: 1.6; }
 
 /* =========================================================
    4. CURSOS — pricing cards
@@ -495,7 +459,6 @@ main > section {
    ========================================================= */
 @media (min-width: 700px) {
   .why { grid-template-columns: 1fr 1fr; align-items: center; }
-  .reasons__inner { grid-template-columns: 1fr 1fr; }
   .courses__grid { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
   .transformations__grid { grid-template-columns: repeat(3,1fr); }
   .testimonials__grid { grid-template-columns: repeat(3,1fr); }
