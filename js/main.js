@@ -122,11 +122,30 @@
     });
   }
 
+  /* Nav que se oculta al bajar y aparece al subir */
+  function initNav() {
+    const nav = document.querySelector('.nav');
+    if (!nav) return;
+    let lastY = 0;
+    window.addEventListener('scroll', () => {
+      const currentY = window.scrollY;
+      if (currentY <= 60) {
+        nav.classList.remove('nav--hidden');
+      } else if (currentY > lastY) {
+        nav.classList.add('nav--hidden');
+      } else {
+        nav.classList.remove('nav--hidden');
+      }
+      lastY = currentY;
+    }, { passive: true });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initWoodCounter();
     initWaitlist();
     initScrollAnimations();
     initWhySlider();
     initFaq();
+    initNav();
   });
 })();
