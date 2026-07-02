@@ -189,11 +189,71 @@ main > section {
   width: 100%; min-height: 50vh; overflow: hidden; position: relative;
 }
 
-.why__image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.why__slider {
+  position: relative;
+  width: 100%; height: 100%;
+  min-height: 50vh;
+  overflow: hidden;
+  touch-action: pan-y;
+  user-select: none;
+}
 
-.why__image img.img-after {
-  position: absolute; inset: 0; opacity: 0;
-  transition: opacity 0.1s linear;
+.why__slide {
+  position: absolute;
+  inset: 0;
+}
+
+.why__slide--before { z-index: 1; }
+.why__slide--after  { z-index: 2; clip-path: inset(0 50% 0 0); }
+
+.why__slide img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+
+.why__slide-label {
+  position: absolute; top: 1rem; left: 1rem;
+  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.4rem 0.8rem; border-radius: 999px;
+  background: var(--bg); color: var(--wood);
+  border: 1.5px solid var(--ink); z-index: 3;
+}
+
+.why__slide--after .why__slide-label {
+  left: auto; right: 1rem;
+  background: var(--accent-dark); color: var(--bg);
+}
+
+.why__slide-label--after {
+  left: auto; right: 1rem;
+  background: var(--accent-dark); color: var(--bg);
+}
+
+.why__slider-divider {
+  position: absolute; top: 0; bottom: 0;
+  width: 2px; background: var(--ink);
+  z-index: 4; transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.why__slider-handle {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--bg); border: var(--border-w) solid var(--ink);
+  box-shadow: var(--shadow-sm);
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: all; color: var(--ink);
+  transition: background 0.15s ease, color 0.15s ease, transform 0.2s ease;
+}
+
+.why__slider-handle:hover {
+  background: var(--accent-dark); color: var(--bg);
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.why__slider-handle:focus-visible {
+  outline: 3px solid var(--forest); outline-offset: 3px;
 }
 
 /* =========================================================

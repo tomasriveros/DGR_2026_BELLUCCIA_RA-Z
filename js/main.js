@@ -54,23 +54,48 @@
     elements.forEach(el => observer.observe(el));
   }
 
-  /* Crossfade scroll en sección "por qué restaurar" */
-  function initCrossfade() {
-    const container = document.querySelector('.why__image');
-    const imgAfter = container ? container.querySelector('.img-after') : null;
-    if (!container || !imgAfter) return;
+  /* Slider antes/después en sección "por qué restaurar" */
+  function initWhySlider() {
+    const slider  = document.getElementById('whySlider');
+    const after   = document.getElementById('whyAfter');
+    const divider = document.getElementById('whyDivider');
+    const handle  = document.getElementById('whyHandle');
+    if (!slider || !after || !divider || !handle) return;
 
-    function update() {
-      const rect = container.getBoundingClientRect();
-      const windowH = window.innerHeight;
-      const start = windowH * 0.85;
-      const end   = windowH * 0.4;
-      const progress = Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
-      imgAfter.style.opacity = progress;
+    let isDragging = false;
+
+    function setPos(percent) {
+      const p = Math.min(100, Math.max(0, percent));
+      after.style.clipPath = `inset(0 ${100 - p}% 0 0)`;
+      divider.style.left = `${p}%`;
+      handle.setAttribute('aria-valuenow', Math.round(p));
     }
 
-    window.addEventListener('scroll', update, { passive: true });
-    update();
+    function pctFromX(clientX) {
+      const rect = slider.getBoundingClientRect();
+      return ((clientX - rect.left) / rect.width) * 100;
+    }
+
+    handle.addEventListener('mousedown', e => { isDragging = true; setPos(pctFromX(e.clientX)); e.preventDefault(); });
+    window.addEventListener('mousemove', e => { if (isDragging) setPos(pctFromX(e.clientX)); });
+    window.addEventListener('mouseup', () => { isDragging = false; });
+
+    handle.addEventListener('touchstart', e => { isDragging = true; setPos(pctFromX(e.touches[0].clientX)); }, { passive: true });
+    window.addEventListener('touchmove', e => { if (isDragging) { setPos(pctFromX(e.touches[0].clientX)); e.preventDefault(); } }, { passive: false });
+    window.addEventListener('touchend', () => { isDragging = false; });
+
+    slider.addEventListener('mousedown', e => {
+      if (e.target === handle || handle.contains(e.target)) return;
+      isDragging = true; setPos(pctFromX(e.clientX));
+    });
+
+    handle.addEventListener('keydown', e => {
+      const cur = parseFloat(divider.style.left) || 50;
+      if (e.key === 'ArrowLeft') { setPos(cur - 5); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { setPos(cur + 5); e.preventDefault(); }
+    });
+
+    setPos(50);
   }
 
   /* Acordeón FAQ */
@@ -101,7 +126,7 @@
     initWoodCounter();
     initWaitlist();
     initScrollAnimations();
-    initCrossfade();
+    initWhySlider();
     initFaq();
   });
 })();

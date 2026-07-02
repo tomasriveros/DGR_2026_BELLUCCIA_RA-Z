@@ -76,8 +76,23 @@
         </div>
       </div>
       <div class="why__image">
-        <img src="assets/seccion2.jpg" alt="Sillón antiguo con historia en un espacio cálido" loading="lazy">
-        <img src="assets/seccionpost.jpg" alt="El mismo mueble restaurado" loading="lazy" class="img-after">
+        <div class="why__slider" id="whySlider">
+          <div class="why__slide why__slide--before">
+            <img src="assets/seccion2.jpg" alt="Mueble antes de restaurar" loading="lazy">
+            <span class="why__slide-label">Antes</span>
+          </div>
+          <div class="why__slide why__slide--after" id="whyAfter">
+            <img src="assets/seccionpost.jpg" alt="Mueble después de restaurar" loading="lazy">
+            <span class="why__slide-label why__slide-label--after">Después</span>
+          </div>
+          <div class="why__slider-divider" id="whyDivider" style="left: 50%;">
+            <button class="why__slider-handle" id="whyHandle" role="slider" aria-label="Arrastrar para comparar antes y después" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M8 5l-6 7 6 7M16 5l6 7-6 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
 
