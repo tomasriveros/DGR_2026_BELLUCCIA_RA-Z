@@ -232,7 +232,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   display: inline-block;
   color: var(--accent);
   font-style: normal;
-  font-size: 1.35em;
+  font-size: 1.12em;
   letter-spacing: 0.01em;
   text-shadow:
     -0.008em -0.008em 0 var(--ink),
