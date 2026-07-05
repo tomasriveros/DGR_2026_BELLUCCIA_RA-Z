@@ -928,8 +928,8 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--bg);
-  border: 1.5px solid var(--bg);
+  color: #AB6A3A;
+  border: 1.5px solid #AB6A3A;
   border-radius: 999px;
   padding: 0.38rem 1rem;
   margin-bottom: 0.75rem;
@@ -941,7 +941,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   font-weight: 900;
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   line-height: 1.2;
-  color: var(--bg);
+  color: #AB6A3A;
 }
 
 .how__desc {
@@ -997,7 +997,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--bg);
-  background: #2A2017;
+  background: #AB6A3A;
   border-radius: 999px;
   padding: 0.3rem 0.75rem;
   align-self: flex-start;
