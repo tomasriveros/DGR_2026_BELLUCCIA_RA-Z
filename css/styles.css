@@ -113,7 +113,7 @@ main > section {
   grid-template-columns: 1fr;
   align-items: center;
   min-height: calc(100vh - 74px);
-  padding: 4rem 1.5rem;
+  padding: 4rem 1.5rem 4rem clamp(1.5rem, 8vw, 8rem);
   background: var(--bg);
   overflow: hidden;
 }
@@ -126,7 +126,7 @@ main > section {
   flex-direction: column;
   align-items: flex-start;
   gap: 1.25rem;
-  max-width: 680px;
+  max-width: 620px;
 }
 
 .hero__eyebrow {
@@ -134,10 +134,10 @@ main > section {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--bg);
-  background: var(--forest);
+  background: var(--ink);
   border: 1.5px solid var(--ink);
   border-radius: 999px;
   padding: 0.38rem 1rem;
@@ -147,7 +147,7 @@ main > section {
 .hero__title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(3.2rem, 7vw, 6rem);
+  font-size: clamp(3.4rem, 7vw, 6.2rem);
   line-height: 1.0;
   letter-spacing: -0.025em;
   color: var(--ink);
@@ -170,36 +170,25 @@ main > section {
 }
 
 .hero__subtitle {
-  max-width: 46ch;
-  font-size: 1rem;
+  max-width: 44ch;
+  font-size: 0.95rem;
   line-height: 1.6;
-  color: color-mix(in srgb, var(--ink) 60%, transparent);
+  color: color-mix(in srgb, var(--ink) 55%, transparent);
   margin: 0.25rem 0 0;
 }
 
-.hero__subtitle--light { color: color-mix(in srgb, var(--ink) 60%, transparent); }
+.hero__subtitle--light { color: color-mix(in srgb, var(--ink) 55%, transparent); }
 
 .hero__actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
   margin-top: 0.75rem;
 }
 
-.hero__illustration {
-  display: none;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.hero__illustration img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center bottom;
-}
+.hero__illustration { display: none; }
+.hero__illustration img { display: none; }
 
 /* =========================================================
    2. ¿POR QUÉ RESTAURAR?
@@ -645,25 +634,12 @@ main > section {
 }
 
 @media (max-width: 768px) {
-
   .hero {
-    justify-content: center;
-    padding: 5rem 1.5rem;
+    padding: 4rem 1.5rem 4rem 1.5rem;
   }
-
   .hero__copy {
     max-width: 100%;
-    text-align: center;
   }
-
-  .hero__actions {
-    justify-content: center;
-  }
-
-   .hero__bg img {
-    object-position: 80% center;
-}
-
 }
 
 /* =========================================================
