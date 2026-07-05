@@ -10,6 +10,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Recoleta';
+  src: url('../fonts/Recoleta-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg:            #F7F1E6;
   --bg-soft:       #EFE6D4;
@@ -216,7 +224,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 
 .hero__title {
   font-family: var(--font-hero);
-  font-weight: 900;
+  font-weight: 700;
   font-size: clamp(3.8rem, 7.5vw, 6.6rem);
   line-height: 0.95;
   letter-spacing: -0.02em;
@@ -232,6 +240,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   display: inline-block;
   color: var(--accent);
   font-style: normal;
+  font-weight: 900;
   font-size: 1.15em;
   letter-spacing: 0.01em;
   text-shadow:
