@@ -104,9 +104,10 @@ main > section {
 .nav__rings { width: 28px; height: 28px; color: var(--accent); }
 .nav__cta   { padding: 0.65rem 1.3rem; font-size: 0.82rem; }
 
-/* =========================================================
-   1. HERO
-   ========================================================= */
+/* ===========================
+   HERO
+=========================== */
+
 .hero {
   position: relative;
   display: flex;
@@ -115,7 +116,7 @@ main > section {
 
   min-height: calc(100vh - 74px);
 
-  padding: 6rem 1.5rem 6rem 7rem;
+  padding: 0 7rem;
 
   overflow: hidden;
   isolation: isolate;
@@ -138,43 +139,54 @@ main > section {
   inset: 0;
   z-index: -1;
   background: linear-gradient(
-    180deg,
-    rgba(43, 33, 24, .35) 0%,
-    rgba(43, 33, 24, .30) 50%,
-    rgba(43, 33, 24, .45) 100%
+    90deg,
+    rgba(34,27,22,.72) 0%,
+    rgba(34,27,22,.48) 35%,
+    rgba(34,27,22,.20) 70%,
+    rgba(34,27,22,.15) 100%
   );
 }
 
 .hero__copy {
-  max-width: 760px;
+  width: 100%;
+  max-width: 680px;
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 1.8rem;
 
   text-align: left;
-  text-shadow: 0 2px 16px rgba(0,0,0,.25);
 }
 
 .hero__eyebrow {
-  font-size: .85rem;
+  display: inline-block;
+
+  font-size: .82rem;
   font-weight: 700;
+
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: #ffdcaf;
+
+  color: var(--accent);
+
+  margin: 0;
 }
 
 .hero__title {
   font-family: var(--font-display);
   font-weight: 700;
 
-  font-size: clamp(4rem, 7vw, 6.8rem);
+  font-size: clamp(4.5rem, 8vw, 7rem);
 
-  line-height: .95;
-  letter-spacing: -.03em;
+  line-height: .92;
+  letter-spacing: -.04em;
+
+  color: #fff;
 
   margin: 0;
+
+  max-width: 11ch;
 
   text-transform: none;
 }
@@ -184,8 +196,16 @@ main > section {
 }
 
 .hero__title--accent {
-  color: var(--accent);
-  font-style: normal;
+  display: inline-block;
+
+  color: #D8B46A;
+
+  text-shadow:
+    -1px -1px 0 #2b2118,
+     1px -1px 0 #2b2118,
+    -1px  1px 0 #2b2118,
+     1px  1px 0 #2b2118,
+     3px 3px 0 #2b2118;
 }
 
 .hero__subtitle {
@@ -194,15 +214,18 @@ main > section {
   font-size: 1.15rem;
   line-height: 1.7;
 
+  color: rgba(255,255,255,.88);
+
   margin: 0;
 }
 
 .hero__subtitle--light {
-  color: rgba(255,255,255,.9);
+  color: rgba(255,255,255,.88);
 }
 
 .hero__actions {
   display: flex;
+  align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
 
