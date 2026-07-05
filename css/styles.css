@@ -122,7 +122,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   grid-template-columns: 1fr;
   align-items: center;
   min-height: calc(100vh - 74px);
-  padding: 4rem 3rem 4rem clamp(3rem, 12vw, 12rem);
+  padding: 4rem 3rem;
   background: var(--bg);
   overflow: hidden;
 }
@@ -134,35 +134,36 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.25rem;
-  max-width: 620px;
+  gap: 1.5rem;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 .hero__eyebrow {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--bg);
-  background: var(--ink);
+  background: var(--accent);
   border: 1.5px solid var(--ink);
   border-radius: 999px;
-  padding: 0.38rem 1rem;
+  padding: 0.4rem 1.1rem;
   margin-bottom: 0.25rem;
 }
 
 .hero__title {
   font-family: var(--font-hero);
   font-weight: 900;
-  font-size: clamp(3.4rem, 7vw, 6.2rem);
+  font-size: clamp(4rem, 8.5vw, 7.4rem);
   line-height: 0.95;
   letter-spacing: -0.02em;
   color: var(--ink);
   margin: 0;
   text-transform: none;
-  max-width: 14ch;
+  max-width: 15ch;
 }
 
 .hero__title--light  { color: var(--ink); }
@@ -171,6 +172,8 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   display: inline-block;
   color: var(--accent);
   font-style: normal;
+  font-size: 1.1em;
+  letter-spacing: 0.01em;
   text-shadow:
     -0.018em -0.018em 0 var(--ink),
      0.018em -0.018em 0 var(--ink),
@@ -180,9 +183,9 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 }
 
 .hero__subtitle {
-  max-width: 44ch;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  max-width: 46ch;
+  font-size: 1.05rem;
+  line-height: 1.65;
   color: color-mix(in srgb, var(--ink) 55%, transparent);
   margin: 0.25rem 0 0;
 }
@@ -198,7 +201,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 }
 
 .hero__cta {
-  background: var(--ink);
+  background: var(--accent);
   color: var(--bg);
   border-color: var(--ink);
 }
@@ -212,7 +215,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 .hero__chair {
   position: relative;
   width: 100%;
-  max-width: 480px;
+  max-width: 620px;
   aspect-ratio: 1 / 1;
 }
 
