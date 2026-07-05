@@ -25,17 +25,18 @@
     } else { run(); }
   }
 
-  /* Cursor circular "Restaurar" sobre el sillón */
-  function initHeroCursor() {
-    const chair = document.getElementById('heroChair');
-    const cursor = document.getElementById('heroCursor');
-    if (!chair || !cursor) return;
-    chair.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
+  /* Toggle antes/después del sillón en el hero */
+  function initHeroToggle() {
+    const btn = document.getElementById('heroToggle');
+    const before = document.getElementById('heroChairBefore');
+    const after = document.getElementById('heroChairAfter');
+    if (!btn || !before || !after) return;
+    btn.addEventListener('click', () => {
+      const showingAfter = btn.getAttribute('aria-pressed') === 'true';
+      btn.setAttribute('aria-pressed', String(!showingAfter));
+      before.classList.toggle('is-active', showingAfter);
+      after.classList.toggle('is-active', !showingAfter);
     });
-    chair.addEventListener('mouseenter', () => cursor.classList.add('is-active'));
-    chair.addEventListener('mouseleave', () => cursor.classList.remove('is-active'));
   }
 
   /* Formulario lista de espera */
@@ -155,7 +156,7 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     initWoodCounter();
-    initHeroCursor();
+    initHeroToggle();
     initWaitlist();
     initScrollAnimations();
     initWhySlider();

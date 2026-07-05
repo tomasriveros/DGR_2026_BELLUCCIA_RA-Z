@@ -328,117 +328,48 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   margin: 0 auto;
 }
 
-.hero__chair {
-  position: relative;
-  width: 100%;
-  max-width: 460px;
-  aspect-ratio: 1 / 1;
-  margin: 0 auto;
-  cursor: none;
-}
-
 .hero__chair-img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
-  pointer-events: none;
-}
-.hero__chair-img--before {
-  opacity: 1;
-  transition: opacity 0.6s ease;
-}
-.hero__chair-img--after {
   opacity: 0;
-  transition: opacity 0.6s ease;
-}
-.hero__chair:hover .hero__chair-img--before { opacity: 0; }
-.hero__chair:hover .hero__chair-img--after  { opacity: 1; }
-
-/* Motitas de polvo flotando (estado "antes") */
-.hero__dust {
-  position: absolute;
-  inset: 0;
+  transition: opacity 0.35s ease;
   pointer-events: none;
+}
+.hero__chair-img.is-active {
   opacity: 1;
-  transition: opacity 0.4s ease;
+  pointer-events: auto;
 }
-.hero__chair:hover .hero__dust { opacity: 0; }
 
-.hero__dust-mote {
+.hero__toggle {
   position: absolute;
-  width: 3px;
-  height: 3px;
+  top: 4%;
+  right: 6%;
+  z-index: 5;
+  width: 92px;
+  height: 92px;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--ink) 35%, transparent);
-  animation: dustFloat 7s ease-in-out infinite;
-}
-.hero__dust-mote:nth-child(1) { left: 30%; top: 20%; animation-delay: 0s; }
-.hero__dust-mote:nth-child(2) { left: 62%; top: 35%; animation-delay: 1.8s; }
-.hero__dust-mote:nth-child(3) { left: 45%; top: 55%; animation-delay: 3.2s; }
-.hero__dust-mote:nth-child(4) { left: 70%; top: 65%; animation-delay: 4.6s; }
-
-@keyframes dustFloat {
-  0%, 100% { transform: translate(0,0); opacity: 0.35; }
-  50%      { transform: translate(4px, -6px); opacity: 0.7; }
-}
-
-/* Destellos al hacer hover */
-.hero__sparkles {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-.hero__sparkle { position: absolute; width: 9px; height: 9px; opacity: 0; }
-.hero__sparkle::before,
-.hero__sparkle::after {
-  content: '';
-  position: absolute;
-  background: color-mix(in srgb, white 70%, var(--bg));
-}
-.hero__sparkle::before { left: 50%; top: 0; width: 1.5px; height: 100%; transform: translateX(-50%); }
-.hero__sparkle::after  { top: 50%; left: 0; height: 1.5px; width: 100%; transform: translateY(-50%); }
-
-.hero__chair:hover .hero__sparkle {
-  animation: sparkleTwinkle 1.3s ease-in-out var(--delay, 0s) 1;
-}
-
-@keyframes sparkleTwinkle {
-  0%   { opacity: 0;   transform: scale(0.4) rotate(0deg); }
-  40%  { opacity: 1;   transform: scale(1.1) rotate(20deg); }
-  70%  { opacity: 0.5; transform: scale(0.9) rotate(20deg); }
-  100% { opacity: 0;   transform: scale(0.4) rotate(20deg); }
-}
-
-/* Cursor circular personalizado */
-.hero__cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: #AB6A3A;
-  color: var(--bg);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-cartel);
-  font-weight: 600;
-  font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  pointer-events: none;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.7);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  z-index: 999;
+  background: #AB6A3A;
+  border: var(--border-w) solid var(--ink);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  padding: 0;
 }
-.hero__cursor.is-active {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
+.hero__toggle img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
 }
+.hero__toggle:hover { transform: translate(-2px,-2px); box-shadow: var(--shadow-md); }
+.hero__toggle:active { transform: translate(1px,1px); box-shadow: 2px 2px 0 0 var(--ink); }
+.hero__toggle[aria-pressed="true"] { background: var(--forest); }
+.hero__toggle:focus-visible { outline: 3px solid var(--forest); outline-offset: 3px; }
 
 /* =========================================================
    2. ¿POR QUÉ RESTAURAR?
