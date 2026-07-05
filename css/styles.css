@@ -113,7 +113,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   grid-template-columns: 1fr;
   align-items: center;
   min-height: calc(100vh - 74px);
-  padding: 4rem 1.5rem 4rem clamp(1.5rem, 8vw, 8rem);
+  padding: 4rem 3rem 4rem clamp(3rem, 12vw, 12rem);
   background: var(--bg);
   overflow: hidden;
 }
@@ -621,7 +621,6 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 @media (min-width: 860px) {
   .hero {
     grid-template-columns: 1fr 1fr;
-    padding: 0 4rem;
     gap: 2rem;
   }
   .hero__illustration { display: block; }
