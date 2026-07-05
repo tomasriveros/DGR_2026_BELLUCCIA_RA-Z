@@ -213,7 +213,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   max-width: 700px;
   margin: 0 auto;
   margin-left: 18rem;
-  margin-top: -14rem;
+  margin-top: -10rem;
 }
 
 .hero__eyebrow {
