@@ -907,7 +907,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 .how {
   max-width: 100%;
   margin: 0;
-  background: #AB6A3A;
+  background: #2A2017;
 }
 
 .how__head {
@@ -963,16 +963,15 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 
 .how__card {
   background: var(--bg);
-  border: 2px solid #2A2017;
+  border: 2px solid #AB6A3A;
   border-radius: 1.25rem;
   padding: 2.5rem;
   min-height: 320px;
-  box-shadow: 4px 4px 0 #2A2017;
+  box-shadow: 4px 4px 0 #AB6A3A;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  /* Estado inicial — apiladas antes del abanico */
   opacity: 0;
   transform: translateX(-60px) rotate(-8deg);
 }
@@ -989,7 +988,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 
 .how__card:hover {
   transform: translate(-3px, -3px);
-  box-shadow: 7px 7px 0 #2A2017;
+  box-shadow: 7px 7px 0 #AB6A3A;
 }
 
 .how__num {
