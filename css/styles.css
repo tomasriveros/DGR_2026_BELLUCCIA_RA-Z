@@ -135,7 +135,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem;
-  max-width: 640px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -147,7 +147,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--bg);
-  background: var(--accent);
+  background: #AB6A3A;
   border: 1.5px solid var(--ink);
   border-radius: 999px;
   padding: 0.5rem 1.3rem;
@@ -172,7 +172,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   display: inline-block;
   color: var(--accent);
   font-style: normal;
-  font-size: 1.1em;
+  font-size: 1.35em;
   letter-spacing: 0.01em;
   text-shadow:
     -0.018em -0.018em 0 var(--ink),
@@ -183,11 +183,12 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 }
 
 .hero__subtitle {
-  max-width: 46ch;
-  font-size: 1.25rem;
-  line-height: 1.55;
+  max-width: 42ch;
+  font-size: 1.3rem;
+  line-height: 1.5;
   color: color-mix(in srgb, var(--ink) 55%, transparent);
   margin: 0.25rem 0 0;
+  text-wrap: balance;
 }
 
 .hero__subtitle--light { color: color-mix(in srgb, var(--ink) 55%, transparent); }
@@ -201,7 +202,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 }
 
 .hero__cta {
-  background: var(--accent);
+  background: #AB6A3A;
   color: var(--bg);
   border-color: var(--ink);
   padding: 1.1rem 2.2rem;
@@ -212,12 +213,13 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 .hero__illustration {
   display: none;
   justify-content: center;
+  margin-left: -4rem;
 }
 
 .hero__chair {
   position: relative;
   width: 100%;
-  max-width: 640px;
+  max-width: 700px;
   aspect-ratio: 1 / 1;
   margin: 0 auto;
 }
@@ -248,7 +250,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent-dark);
+  background: #AB6A3A;
   border: var(--border-w) solid var(--ink);
   box-shadow: var(--shadow-sm);
   cursor: pointer;
