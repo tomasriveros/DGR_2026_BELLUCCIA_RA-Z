@@ -52,15 +52,25 @@
 </div>
       </div>
       <div class="hero__illustration">
-        <div class="hero__chair" id="heroChair">
-          <img src="assets/sillonhechoverga.png" alt="Sillón antes de restaurar" class="hero__chair-img hero__chair-img--before is-active" id="heroChairBefore" loading="eager">
-          <img src="assets/sillonclean.png" alt="Sillón después de restaurado" class="hero__chair-img hero__chair-img--after" id="heroChairAfter" loading="eager">
-          <button type="button" class="hero__toggle" id="heroToggle" aria-pressed="false" aria-label="Ver el antes y después de la restauración">
-  <img src="assets/herramienta.png" alt="" aria-hidden="true">
-</button>
-        </div>
-      </div>
-    </section>
+  <div class="hero__chair" id="heroChair">
+    <img src="assets/sillonhechoverga.png" alt="Sillón antes de restaurar" class="hero__chair-img hero__chair-img--before" loading="eager">
+    <img src="assets/sillonclean.png" alt="Sillón restaurado" class="hero__chair-img hero__chair-img--after" loading="eager">
+    <div class="hero__dust" aria-hidden="true">
+      <span class="hero__dust-mote"></span>
+      <span class="hero__dust-mote"></span>
+      <span class="hero__dust-mote"></span>
+      <span class="hero__dust-mote"></span>
+    </div>
+    <div class="hero__sparkles" aria-hidden="true">
+      <span class="hero__sparkle" style="left:22%; top:18%; --delay:0s;"></span>
+      <span class="hero__sparkle" style="left:72%; top:28%; --delay:0.25s;"></span>
+      <span class="hero__sparkle" style="left:48%; top:55%; --delay:0.5s;"></span>
+      <span class="hero__sparkle" style="left:80%; top:68%; --delay:0.1s;"></span>
+      <span class="hero__sparkle" style="left:18%; top:72%; --delay:0.4s;"></span>
+    </div>
+  </div>
+</div>
+<div class="hero__cursor" id="heroCursor" aria-hidden="true">Restaurar</div>
 
     <!-- 2. ¿POR QUÉ RESTAURAR? -->
     <section class="why fade-up" id="por-que">
