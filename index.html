@@ -33,20 +33,27 @@
       <div class="hero__copy">
         <span class="hero__eyebrow">Curso de restauración de muebles</span>
         <h1 class="hero__title">
-          Ese mueble<br>
-          tiene una <span class="hero__title--accent">historia.</span><br>
-          Aprendé a continuarla.
+          Aprendé a<br>
+          restaurar<br>
+          <span class="hero__title--accent">historias</span>
         </h1>
         <p class="hero__subtitle">
           Aprendé técnicas de restauración para devolverle vida a muebles con valor sentimental. Un curso online pensado para quienes quieren crear con sus manos y preservar historias.
         </p>
         <div class="hero__actions">
-          <a href="#curso" class="btn btn--primary">Quiero anotarme</a>
-          <a href="#por-que" class="btn btn--ghost">Conocer el curso</a>
+          <a href="#curso" class="btn btn--accent hero__cta">Conocé más</a>
         </div>
       </div>
       <div class="hero__illustration">
-        <img src="assets/heronuevo.jpg" alt="Sillón restaurado" loading="eager">
+        <div class="hero__chair" id="heroChair">
+          <img src="assets/sillonhechoverga.png" alt="Sillón antes de restaurar" class="hero__chair-img hero__chair-img--before is-active" id="heroChairBefore" loading="eager">
+          <img src="assets/sillonclean.png" alt="Sillón después de restaurado" class="hero__chair-img hero__chair-img--after" id="heroChairAfter" loading="eager">
+          <button type="button" class="hero__toggle" id="heroToggle" aria-pressed="false" aria-label="Ver el antes y después de la restauración">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+              <path d="M14.7 6.3a3.5 3.5 0 0 0-4.9 4.9L4 17l3 3 5.8-5.8a3.5 3.5 0 0 0 4.9-4.9l-2.1 2.1-2-2 2.1-2.1z"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
 

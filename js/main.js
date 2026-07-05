@@ -25,6 +25,20 @@
     } else { run(); }
   }
 
+  /* Toggle antes/después del sillón en el hero */
+  function initHeroToggle() {
+    const btn = document.getElementById('heroToggle');
+    const before = document.getElementById('heroChairBefore');
+    const after = document.getElementById('heroChairAfter');
+    if (!btn || !before || !after) return;
+    btn.addEventListener('click', () => {
+      const showingAfter = btn.getAttribute('aria-pressed') === 'true';
+      btn.setAttribute('aria-pressed', String(!showingAfter));
+      before.classList.toggle('is-active', showingAfter);
+      after.classList.toggle('is-active', !showingAfter);
+    });
+  }
+
   /* Formulario lista de espera */
   function initWaitlist() {
     const form = document.getElementById('waitlistForm');
@@ -142,6 +156,7 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     initWoodCounter();
+    initHeroToggle();
     initWaitlist();
     initScrollAnimations();
     initWhySlider();

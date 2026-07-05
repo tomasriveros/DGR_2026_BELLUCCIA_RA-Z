@@ -2,16 +2,25 @@
    RAÍZ — styles.css
    ========================================================= */
 
+@font-face {
+  font-family: 'Recoleta';
+  src: url('../fonts/Recoleta-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg:            #F7F1E6;
   --bg-soft:       #EFE6D4;
-  --ink:           #2B2118;
+  --ink:           #2A2017;
   --wood:          #8B5E3C;
   --wood-light:    #C9A87C;
-  --accent:        #A66A3F;
+  --accent:        #AB6A3A;
   --accent-dark:   #7E4F2E;
   --forest:        #1F6F5C;
   --font-display:  'Fraunces', 'Georgia', serif;
+  --font-hero:     'Recoleta', 'Fraunces', 'Georgia', serif;
   --font-body:     'Inter', -apple-system, sans-serif;
   --font-mono:     'JetBrains Mono', 'Courier New', monospace;
   --shadow-sm:     3px 3px 0px 0px var(--ink);
@@ -145,11 +154,11 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 }
 
 .hero__title {
-  font-family: var(--font-display);
-  font-weight: 700;
+  font-family: var(--font-hero);
+  font-weight: 900;
   font-size: clamp(3.4rem, 7vw, 6.2rem);
-  line-height: 1.0;
-  letter-spacing: -0.025em;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
   color: var(--ink);
   margin: 0;
   text-transform: none;
@@ -159,14 +168,15 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 .hero__title--light  { color: var(--ink); }
 
 .hero__title--accent {
+  display: inline-block;
   color: var(--accent);
-  font-style: italic;
+  font-style: normal;
   text-shadow:
-    -1.5px -1.5px 0 var(--ink),
-     1.5px -1.5px 0 var(--ink),
-    -1.5px  1.5px 0 var(--ink),
-     1.5px  1.5px 0 var(--ink),
-     4px 4px 0 var(--ink);
+    -0.018em -0.018em 0 var(--ink),
+     0.018em -0.018em 0 var(--ink),
+    -0.018em  0.018em 0 var(--ink),
+     0.018em  0.018em 0 var(--ink),
+     0.055em  0.05em 0 var(--ink);
 }
 
 .hero__subtitle {
@@ -187,8 +197,62 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   margin-top: 0.75rem;
 }
 
-.hero__illustration { display: none; }
-.hero__illustration img { display: none; }
+.hero__cta {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+.hero__cta:hover { background: var(--accent-dark); }
+
+.hero__illustration {
+  display: none;
+  justify-content: center;
+}
+
+.hero__chair {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1 / 1;
+}
+
+.hero__chair-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.hero__chair-img.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hero__toggle {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  z-index: 5;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-dark);
+  color: var(--bg);
+  border: var(--border-w) solid var(--ink);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.hero__toggle:hover { transform: translate(-2px,-2px); box-shadow: var(--shadow-md); }
+.hero__toggle:active { transform: translate(1px,1px); box-shadow: 2px 2px 0 0 var(--ink); }
+.hero__toggle[aria-pressed="true"] { background: var(--forest); }
+.hero__toggle:focus-visible { outline: 3px solid var(--forest); outline-offset: 3px; }
 
 /* =========================================================
    2. ¿POR QUÉ RESTAURAR?
@@ -623,7 +687,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
-  .hero__illustration { display: block; }
+  .hero__illustration { display: flex; }
 }
 
 @media (min-width: 960px) {
