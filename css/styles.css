@@ -315,13 +315,15 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 .hero__illustration {
   display: none;
   justify-content: center;
+  align-items: flex-start;
   margin-left: -4rem;
+  margin-top: -9rem;
 }
 
 .hero__chair {
   position: relative;
   width: 100%;
-  max-width: 700px;
+  max-width: 460px;
   aspect-ratio: 1 / 1;
   margin: 0 auto;
 }
