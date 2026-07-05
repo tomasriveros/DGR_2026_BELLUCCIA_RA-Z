@@ -213,7 +213,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   max-width: 700px;
   margin: 0 auto;
   margin-left: 18rem;
-  margin-top: -10rem;
+  margin-top: -9rem;
 }
 
 .hero__eyebrow {
@@ -234,7 +234,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 .hero__title {
   font-family: var(--font-hero);
   font-weight: 700;
-  font-size: clamp(3.4rem, 6.8vw, 6.6rem);
+  font-size: clamp(3.2rem, 6.6vw, 6.6rem);
   line-height: 0.95;
   letter-spacing: -0.02em;
   color: var(--ink);
@@ -284,6 +284,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 .hero__cta {
   font-family: var(--font-cartel);
   font-weight: 500;
+  text-transform: uppercase;
   background: #AB6A3A;
   color: var(--bg);
   border-color: var(--ink);
@@ -295,6 +296,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 .hero__cta--ghost {
   font-family: var(--font-cartel);
   font-weight: 500;
+  text-transform: uppercase;
   background: var(--bg);
   color: var(--ink);
   border: var(--border-w) solid var(--ink);
