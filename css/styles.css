@@ -112,7 +112,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 .nav__logo {
   grid-column: 1;
   justify-self: start;
-  margin-left: clamp(1rem, 4vw, 4rem);
+  margin-left: clamp(1.5rem, 8vw, 6rem);
   display: inline-flex; align-items: center; gap: 0.7rem;
   font-family: var(--font-display); font-weight: 700; font-size: 1.8rem;
 }
