@@ -195,8 +195,8 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   gap: 1.5rem;
   max-width: 700px;
   margin: 0 auto;
-  margin-left: 4rem;
-  margin-top: -3rem;
+  margin-left: 13rem;
+  margin-top: -8rem;
 }
 
 .hero__eyebrow {
