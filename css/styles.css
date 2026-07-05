@@ -213,7 +213,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 .hero__illustration {
   display: none;
   justify-content: center;
-  margin-left: -4rem;
+  margin-left: -7rem;
 }
 
 .hero__chair {
