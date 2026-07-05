@@ -264,7 +264,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   max-width: 46ch;
   font-family: var(--font-cartel);
   font-weight: 500;
-  font-size: 1.20rem;
+  font-size: 1.30rem;
   line-height: 1.5;
   color: color-mix(in srgb, var(--ink) 55%, transparent);
   margin: 0.25rem 0 0;
