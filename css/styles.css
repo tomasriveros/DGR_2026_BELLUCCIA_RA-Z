@@ -185,8 +185,8 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 }
 
 .hero__subtitle {
-  max-width: 42ch;
-  font-size: 1.3rem;
+  max-width: 49ch;
+  font-size: 1.9rem;
   line-height: 1.5;
   color: color-mix(in srgb, var(--ink) 55%, transparent);
   margin: 0.25rem 0 0;
