@@ -110,8 +110,9 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   transition: background 0.25s ease;
 }
 .nav__logo {
-  grid-column: 2;
-  justify-self: center;
+  grid-column: 1;
+  justify-self: start;
+  margin-left: clamp(1rem, 4vw, 4rem);
   display: inline-flex; align-items: center; gap: 0.7rem;
   font-family: var(--font-display); font-weight: 700; font-size: 1.8rem;
 }
@@ -122,8 +123,8 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 }
 
 .nav__links {
-  grid-column: 3;
-  justify-self: end;
+  grid-column: 2;
+  justify-self: center;
   display: none;
   align-items: center;
   gap: 3.25rem;
