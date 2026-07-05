@@ -195,14 +195,14 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   gap: 1.5rem;
   max-width: 700px;
   margin: 0 auto;
-  margin-left: 13rem;
-  margin-top: -7rem;
+  margin-left: 4rem;
+  margin-top: -3rem;
 }
 
 .hero__eyebrow {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -210,14 +210,14 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   background: #AB6A3A;
   border: 1.5px solid var(--ink);
   border-radius: 999px;
-  padding: 0.5rem 1.3rem;
+  padding: 0.4rem 1.1rem;
   margin-bottom: 0.25rem;
 }
 
 .hero__title {
   font-family: var(--font-hero);
   font-weight: 900;
-  font-size: clamp(4rem, 8.5vw, 7.4rem);
+  font-size: clamp(3.2rem, 6.5vw, 5.6rem);
   line-height: 0.95;
   letter-spacing: -0.02em;
   color: var(--ink);
@@ -232,19 +232,19 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   display: inline-block;
   color: var(--accent);
   font-style: normal;
-  font-size: 1.12em;
+  font-size: 1.15em;
   letter-spacing: 0.01em;
   text-shadow:
-    -0.008em -0.008em 0 var(--ink),
-     0.008em -0.008em 0 var(--ink),
-    -0.008em  0.008em 0 var(--ink),
-     0.008em  0.008em 0 var(--ink),
+    -0.012em -0.012em 0 var(--ink),
+     0.012em -0.012em 0 var(--ink),
+    -0.012em  0.012em 0 var(--ink),
+     0.012em  0.012em 0 var(--ink),
      0.055em  0.05em 0 var(--ink);
 }
 
 .hero__subtitle {
-  max-width: 49ch;
-  font-size: 1.6rem;
+  max-width: 42ch;
+  font-size: 1.05rem;
   line-height: 1.5;
   color: color-mix(in srgb, var(--ink) 55%, transparent);
   margin: 0.25rem 0 0;
@@ -273,8 +273,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 .hero__illustration {
   display: none;
   justify-content: center;
-  margin-left: -14rem;
-  margin-top: -3rem;
+  margin-left: -4rem;
 }
 
 .hero__chair {
