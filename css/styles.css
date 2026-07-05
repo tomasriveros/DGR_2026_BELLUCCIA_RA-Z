@@ -215,8 +215,8 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 .hero__illustration {
   display: none;
   justify-content: center;
-  margin-left: -8rem;
-  margin-top: -5rem;
+  margin-left: -10rem;
+  margin-top: -3rem;
 }
 
 .hero__chair {
