@@ -18,6 +18,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg:            #F7F1E6;
   --bg-soft:       #EFE6D4;
@@ -29,6 +37,7 @@
   --forest:        #1F6F5C;
   --font-display:  'Fraunces', 'Georgia', serif;
   --font-hero:     'Recoleta', 'Fraunces', 'Georgia', serif;
+  --font-cartel: 'Montserrat', sans-serif;
   --font-body:     'Inter', -apple-system, sans-serif;
   --font-mono:     'JetBrains Mono', 'Courier New', monospace;
   --shadow-sm:     3px 3px 0px 0px var(--ink);
@@ -209,9 +218,9 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 
 .hero__eyebrow {
   display: inline-block;
-  font-family: var(--font-mono);
+  font-family: var(--font-cartel);
+  font-weight: 500;
   font-size: 0.8rem;
-  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--bg);
@@ -253,6 +262,8 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 
 .hero__subtitle {
   max-width: 42ch;
+  font-family: var(--font-cartel);
+  font-weight: 500;
   font-size: 1.05rem;
   line-height: 1.5;
   color: color-mix(in srgb, var(--ink) 55%, transparent);
@@ -271,6 +282,8 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 }
 
 .hero__cta {
+  font-family: var(--font-cartel);
+  font-weight: 500;
   background: #AB6A3A;
   color: var(--bg);
   border-color: var(--ink);
