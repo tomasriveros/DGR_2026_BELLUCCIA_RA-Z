@@ -112,6 +112,26 @@
     setPos(50);
   }
 
+  /* Animación abanico de cartas — sección Así funciona */
+  function initHowCards() {
+    const cards = document.querySelectorAll('.how__card');
+    if (!cards.length) return;
+    if (!('IntersectionObserver' in window)) {
+      cards.forEach(c => c.classList.add('is-fanned'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          cards.forEach(c => c.classList.add('is-fanned'));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.2 });
+    const grid = document.querySelector('.how__grid');
+    if (grid) observer.observe(grid);
+  }
+
   /* Acordeón FAQ */
   function initFaq() {
     const buttons = document.querySelectorAll('.faq__question');
@@ -121,13 +141,11 @@
         const isOpen = btn.getAttribute('aria-expanded') === 'true';
         const answerId = btn.getAttribute('aria-controls');
         const answer = document.getElementById(answerId);
-        // Cerrar todos
         buttons.forEach(b => {
           b.setAttribute('aria-expanded', 'false');
           const a = document.getElementById(b.getAttribute('aria-controls'));
           if (a) a.hidden = true;
         });
-        // Abrir el clickeado (si estaba cerrado)
         if (!isOpen) {
           btn.setAttribute('aria-expanded', 'true');
           if (answer) answer.hidden = false;
@@ -160,6 +178,7 @@
     initWaitlist();
     initScrollAnimations();
     initWhySlider();
+    initHowCards();
     initFaq();
     initNav();
   });
