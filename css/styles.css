@@ -220,14 +220,14 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   display: inline-block;
   font-family: var(--font-cartel);
   font-weight: 500;
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--bg);
   background: #AB6A3A;
   border: 1.5px solid var(--ink);
   border-radius: 999px;
-  padding: 0.4rem 1.1rem;
+  padding: 0.65rem 1.8rem;
   margin-bottom: 0.25rem;
 }
 
@@ -264,7 +264,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   max-width: 46ch;
   font-family: var(--font-cartel);
   font-weight: 500;
-  font-size: 1.30rem;
+  font-size: 1.40rem;
   line-height: 1.5;
   color: color-mix(in srgb, var(--ink) 55%, transparent);
   margin: 0.25rem 0 0;
@@ -287,10 +287,28 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   background: #AB6A3A;
   color: var(--bg);
   border-color: var(--ink);
-  padding: 1.1rem 2.2rem;
+  padding: 1.1rem 2.8rem;
   font-size: 1.05rem;
 }
 .hero__cta:hover { background: var(--accent-dark); }
+
+.hero__cta--ghost {
+  font-family: var(--font-cartel);
+  font-weight: 500;
+  background: var(--bg);
+  color: var(--ink);
+  border: var(--border-w) solid var(--ink);
+  padding: 1.1rem 2.2rem;
+  font-size: 1.05rem;
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.hero__cta--ghost:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-sm);
+}
 
 .hero__illustration {
   display: none;
