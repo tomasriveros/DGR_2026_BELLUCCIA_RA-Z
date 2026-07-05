@@ -234,7 +234,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 .hero__title {
   font-family: var(--font-hero);
   font-weight: 700;
-  font-size: clamp(3.8rem, 7.5vw, 6.6rem);
+  font-size: clamp(3.4rem, 6.8vw, 6.6rem);
   line-height: 0.95;
   letter-spacing: -0.02em;
   color: var(--ink);
