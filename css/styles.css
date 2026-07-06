@@ -355,6 +355,11 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   background: var(--ink);
   color: var(--bg);
   padding: var(--space-section) 1.5rem;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .sobre__stat {
