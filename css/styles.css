@@ -506,9 +506,9 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 }
 
 @media (min-width: 860px) {
-  .sobre__stat { flex-direction: row; align-items: center; gap: 3rem; text-align: left; }
+  .sobre__stat { flex-direction: row; align-items: center; gap: 5rem; text-align: left; padding: 4rem 3rem; }
   .sobre__stat-number { flex-shrink: 0; }
-  .sobre__grid { grid-template-columns: 1fr 1fr; align-items: center; }
+  .sobre__grid { grid-template-columns: 1fr 1fr; align-items: start; }
 }
 
 /* =========================================================
