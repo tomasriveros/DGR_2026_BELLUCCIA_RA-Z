@@ -354,12 +354,17 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 .sobre {
   background: var(--ink);
   color: var(--bg);
-  padding: var(--space-section) 1.5rem;
+  padding: 2.5rem 1.5rem;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .sobre__stat {
   max-width: var(--max-w);
-  margin: 0 auto 3rem;
+  margin: 0 auto 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -371,7 +376,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 .sobre__stat-number {
   font-family: var(--font-hero);
   font-weight: 900;
-  font-size: clamp(5.2rem, 16vw, 13rem);
+  font-size: clamp(3.5rem, 9vw, 6.5rem);
   color: var(--accent);
   line-height: 1;
 }
@@ -418,14 +423,14 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   font-family: var(--font-hero);
   font-weight: 900;
   color: var(--accent);
-  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
   line-height: 1.15;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .sobre__desc {
-  font-size: 1.05rem;
-  line-height: 1.65;
+  font-size: 0.95rem;
+  line-height: 1.55;
   color: color-mix(in srgb, var(--bg) 80%, transparent);
   max-width: 56ch;
 }
@@ -513,8 +518,8 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 }
 
 @media (min-width: 860px) {
-  .sobre__stat { flex-direction: row; align-items: center; justify-content: space-between; text-align: left; padding: 4rem 3.5rem; }
-  .sobre__stat-number { flex-shrink: 0; margin-left: 2rem; }
+  .sobre__stat { flex-direction: row; align-items: center; justify-content: space-between; text-align: left; padding: 2rem 2.5rem; }
+  .sobre__stat-number { flex-shrink: 0; margin-left: 1.5rem; }
   .sobre__grid { grid-template-columns: 1fr 1fr; align-items: stretch; }
   .sobre__cards { aspect-ratio: unset; height: 100%; }
 }
