@@ -371,7 +371,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 .sobre__stat-number {
   font-family: var(--font-hero);
   font-weight: 900;
-  font-size: clamp(4rem, 10vw, 7rem);
+  font-size: clamp(4.5rem, 12vw, 9rem);
   color: var(--accent);
   line-height: 1;
 }
@@ -506,7 +506,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 }
 
 @media (min-width: 860px) {
-  .sobre__stat { flex-direction: row; align-items: center; gap: 5rem; text-align: left; padding: 4rem 3rem; }
+  .sobre__stat { flex-direction: row; align-items: center; justify-content: space-between; text-align: left; padding: 4rem 3.5rem; }
   .sobre__stat-number { flex-shrink: 0; }
   .sobre__grid { grid-template-columns: 1fr 1fr; align-items: start; }
 }
