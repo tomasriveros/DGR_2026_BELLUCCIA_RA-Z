@@ -1054,7 +1054,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
    ========================================================= */
 .reviews {
   background: #2A2017;
-  padding: var(--space-section) 1.5rem;
+  padding: 3rem 1.5rem;
 }
 
 .reviews__head {
