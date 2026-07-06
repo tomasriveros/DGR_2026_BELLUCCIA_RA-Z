@@ -1060,6 +1060,9 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 .reviews__head {
   text-align: center;
   margin-bottom: 2.5rem;
+  max-width: var(--max-w);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .reviews__title {
@@ -1073,14 +1076,20 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 .reviews__subtitle {
   font-size: 0.97rem;
   color: color-mix(in srgb, var(--bg) 70%, transparent);
-  max-width: 50ch;
-  margin: 0 auto;
   line-height: 1.6;
+  white-space: nowrap;
+}
+
+.reviews__card {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  border: 1.5px solid color-mix(in srgb, #AB6A3A 40%, transparent);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  background: color-mix(in srgb, var(--bg) 5%, transparent);
 }
 
 .reviews__track-wrap {
-  max-width: 760px;
-  margin: 0 auto;
   overflow: hidden;
 }
 
@@ -1091,25 +1100,22 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 
 .reviews__slide {
   min-width: 100%;
-  padding: 2.5rem 3rem;
+  padding: 1.5rem 2rem;
   text-align: center;
-  border: 1.5px solid color-mix(in srgb, #AB6A3A 40%, transparent);
-  border-radius: 1.5rem;
-  background: color-mix(in srgb, var(--bg) 5%, transparent);
   box-sizing: border-box;
 }
 
 .reviews__slide strong {
   display: block;
   font-family: 'Recoleta', var(--font-display);
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: 900;
   color: #AB6A3A;
   margin-bottom: 1rem;
 }
 
 .reviews__slide p {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   line-height: 1.7;
   color: color-mix(in srgb, var(--bg) 88%, transparent);
   max-width: 56ch;
@@ -1121,7 +1127,7 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   align-items: center;
   justify-content: center;
   gap: 1.25rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .reviews__arrow {
