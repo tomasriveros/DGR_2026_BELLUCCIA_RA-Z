@@ -150,24 +150,50 @@
     setPos(50);
   }
 
-  /* Animación abanico de cartas — sección Así funciona */
-  function initHowCards() {
-    const cards = document.querySelectorAll('.how__card');
-    if (!cards.length) return;
-    if (!('IntersectionObserver' in window)) {
-      cards.forEach(c => c.classList.add('is-fanned'));
-      return;
-    }
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          cards.forEach(c => c.classList.add('is-fanned'));
-          observer.disconnect();
-        }
+  /* Carrusel de testimonios con autoplay */
+  function initReviews() {
+    const track = document.getElementById('reviewsTrack');
+    const dotsWrap = document.getElementById('reviewsDots');
+    const prev = document.getElementById('reviewsPrev');
+    const next = document.getElementById('reviewsNext');
+    if (!track || !dotsWrap || !prev || !next) return;
+
+    const slides = track.querySelectorAll('.reviews__slide');
+    const total = slides.length;
+    let current = 0;
+    let timer;
+
+    // Crear puntitos
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'reviews__dot' + (i === 0 ? ' is-active' : '');
+      dot.setAttribute('aria-label', `Testimonio ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+
+    function goTo(index) {
+      current = (index + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dotsWrap.querySelectorAll('.reviews__dot').forEach((d, i) => {
+        d.classList.toggle('is-active', i === current);
       });
-    }, { threshold: 0.2 });
-    const grid = document.querySelector('.how__grid');
-    if (grid) observer.observe(grid);
+      resetTimer();
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => goTo(current + 1), 4000);
+    }
+
+    prev.addEventListener('click', () => goTo(current - 1));
+    next.addEventListener('click', () => goTo(current + 1));
+
+    // Pausar en hover
+    track.closest('.reviews__track-wrap').addEventListener('mouseenter', () => clearInterval(timer));
+    track.closest('.reviews__track-wrap').addEventListener('mouseleave', resetTimer);
+
+    resetTimer();
   }
 
   /* Acordeón FAQ */
@@ -217,7 +243,7 @@
     initWaitlist();
     initScrollAnimations();
     initWhySlider();
-    initHowCards();
+    initReviews();
     initFaq();
     initNav();
     initFlipCards();
