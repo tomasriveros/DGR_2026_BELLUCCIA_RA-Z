@@ -431,10 +431,11 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 }
 
 .sobre__cards {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 4;
   border: var(--border-w) solid var(--bg);
   border-radius: 1.25rem;
   overflow: hidden;
+  box-shadow: 3px 3px 0px 0px var(--bg);
 }
 .sobre__cards img {
   width: 100%;
@@ -514,8 +515,8 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 
 @media (min-width: 860px) {
   .sobre__stat { flex-direction: row; align-items: center; justify-content: space-between; text-align: left; padding: 4rem 3.5rem; }
-  .sobre__stat-number { flex-shrink: 0; margin-left: 2rem; }
-  .sobre__grid { grid-template-columns: 1fr 1fr; align-items: stretch; }
+  .sobre__stat-number { flex-shrink: 0; margin-left: 4rem; }
+  .sobre__grid { grid-template-columns: 1.4fr 0.8fr; align-items: stretch; }
   .sobre__cards { aspect-ratio: unset; height: 100%; }
 }
 
