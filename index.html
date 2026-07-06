@@ -83,42 +83,82 @@
     </section>
 
     <!-- ASÍ FUNCIONA -->
-    <section class="how fade-up">
-      <div class="how__head">
-        <div class="how__head-left">
-          <span class="how__eyebrow">¿Por qué aprender con RAÍZ?</span>
-          <h2 class="how__title">Detrás de cada restauración hay una historia, una técnica y una decisión.</h2>
+    <!-- CARRUSEL TESTIMONIOS -->
+    <section class="reviews" id="testimonios">
+      <div class="reviews__head">
+        <h2 class="reviews__title">Lo que opinan nuestros alumnos</h2>
+        <p class="reviews__subtitle">Experiencias reales de personas que restauraron su primer mueble junto a RAÍZ.</p>
+      </div>
+
+      <div class="reviews__track-wrap">
+        <div class="reviews__track" id="reviewsTrack">
+
+          <div class="reviews__slide">
+            <strong>Fernando Torres</strong>
+            <p>"No tenía experiencia ni herramientas profesionales. En pocas semanas pude restaurar mi primera mesa y el resultado superó mis expectativas."</p>
+          </div>
+          <div class="reviews__slide">
+            <strong>Valentina Méndez</strong>
+            <p>"Heredé la cómoda de mi abuela y no sabía por dónde empezar. RAÍZ me dio el paso a paso y hoy es la pieza favorita de mi cuarto."</p>
+          </div>
+          <div class="reviews__slide">
+            <strong>Martín Ríos</strong>
+            <p>"Pensaba que restaurar era para gente con mucha experiencia. El curso me demostró que con la guía correcta cualquiera puede lograrlo."</p>
+          </div>
+          <div class="reviews__slide">
+            <strong>Lucía Paredes</strong>
+            <p>"Lo que más me sorprendió fue la calidad del acabado final. Nadie puede creer que lo hice yo misma desde cero."</p>
+          </div>
+          <div class="reviews__slide">
+            <strong>Camila Ortega</strong>
+            <p>"Tenía un sillón de mi bisabuelo completamente roto. Hoy está restaurado y en el living de mi casa. Cada vez que lo veo pienso en él."</p>
+          </div>
+          <div class="reviews__slide">
+            <strong>Santiago Vera</strong>
+            <p>"Los materiales que recomiendan son fáciles de conseguir y económicos. No necesité gastar fortunas para tener un resultado increíble."</p>
+          </div>
+          <div class="reviews__slide">
+            <strong>Florencia Núñez</strong>
+            <p>"El foro de consultas fue clave. Cada vez que tenía una duda alguien me respondía rápido con consejos reales y precisos."</p>
+          </div>
+          <div class="reviews__slide">
+            <strong>Ignacio Salinas</strong>
+            <p>"Empecé el curso sin saber nada de madera. Hoy restauré tres muebles y ya me están pidiendo que les restaure piezas a amigos."</p>
+          </div>
+          <div class="reviews__slide">
+            <strong>Agustina Romero</strong>
+            <p>"La silla que restauré estaba en un depósito desde hace diez años. Ahora preside la mesa del comedor y toda la familia pregunta de dónde salió."</p>
+          </div>
+          <div class="reviews__slide">
+            <strong>Diego Herrera</strong>
+            <p>"Me lo recomendó una amiga y no me arrepiento para nada. Las clases son claras, bien explicadas y se pueden ver cuando uno quiere."</p>
+          </div>
+          <div class="reviews__slide">
+            <strong>Rocío Giménez</strong>
+            <p>"Aprendí a leer el mueble antes de tocar nada. Eso cambió todo. Ahora entiendo qué necesita cada pieza antes de intervenir."</p>
+          </div>
+          <div class="reviews__slide">
+            <strong>Tomás Villareal</strong>
+            <p>"El certificado fue un plus inesperado. Lo tengo enmarcado al lado del mueble que restauré. Un recuerdo doble."</p>
+          </div>
+          <div class="reviews__slide">
+            <strong>Mariana Solís</strong>
+            <p>"Restaurar el escritorio de mi papá fue una experiencia muy emotiva. RAÍZ me dio las herramientas técnicas pero también la confianza para hacerlo."</p>
+          </div>
+
         </div>
       </div>
-      <div class="how__grid">
 
-        <div class="how__card">
-          <span class="how__num">01</span>
-          <h3 class="how__card-title">Encontrás un mueble olvidado.</h3>
-          <p class="how__card-desc">Ese sillón de tu abuela, la cómoda del pasillo, la silla que nadie usa. Ahí empieza todo.</p>
-        </div>
-
-        <div class="how__card">
-          <span class="how__num">02</span>
-          <h3 class="how__card-title">Descubrís el valor que tiene.</h3>
-          <p class="how__card-desc">Aprendés a diagnosticar la pieza: qué se puede salvar, qué necesita reparación y qué historia guarda.</p>
-        </div>
-
-        <div class="how__card">
-          <span class="how__num">03</span>
-          <h3 class="how__card-title">Aprendés a restaurarlo.</h3>
-          <p class="how__card-desc">Con técnicas profesionales explicadas paso a paso, materiales accesibles y acompañamiento real.</p>
-        </div>
-
-        <div class="how__card">
-          <span class="how__num">04</span>
-          <h3 class="how__card-title">La historia continúa.</h3>
-          <p class="how__card-desc">El mueble vuelve a ocupar su lugar. Y vos tenés una habilidad nueva que dura para siempre.</p>
-        </div>
-
+      <div class="reviews__controls">
+        <button class="reviews__arrow" id="reviewsPrev" aria-label="Anterior">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="reviews__dots" id="reviewsDots"></div>
+        <button class="reviews__arrow" id="reviewsNext" aria-label="Siguiente">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
       </div>
     </section>
-
 
     <!-- 4. EL CURSO -->
     <section class="courses fade-up" id="curso">
