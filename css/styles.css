@@ -348,6 +348,168 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
 }
 
 /* =========================================================
+   SOBRE RAÍZ
+   ========================================================= */
+
+.sobre {
+  background: var(--ink);
+  color: var(--bg);
+  padding: var(--space-section) 1.5rem;
+}
+
+.sobre__stat {
+  max-width: var(--max-w);
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border: 1.5px solid color-mix(in srgb, var(--bg) 25%, transparent);
+  border-radius: 1.5rem;
+  padding: 3rem 2.5rem;
+}
+
+.sobre__stat-number {
+  font-family: var(--font-hero);
+  font-weight: 900;
+  font-size: clamp(4rem, 10vw, 7rem);
+  color: var(--accent);
+  line-height: 1;
+}
+.sobre__stat-number::before { content: '+'; }
+
+.sobre__stat-title {
+  font-family: var(--font-hero);
+  font-weight: 900;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.sobre__stat-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--bg) 75%, transparent);
+  max-width: 42ch;
+}
+
+.sobre__grid {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.sobre__eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bg);
+  border: 1.5px solid var(--bg);
+  border-radius: 999px;
+  padding: 0.5rem 1.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.sobre__title {
+  font-family: var(--font-hero);
+  font-weight: 900;
+  color: var(--accent);
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.sobre__desc {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: color-mix(in srgb, var(--bg) 80%, transparent);
+  max-width: 56ch;
+}
+
+.sobre__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.flip-card {
+  perspective: 1200px;
+  height: 220px;
+  border-radius: 1.25rem;
+  cursor: pointer;
+}
+
+.flip-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(.4,.2,.2,1);
+  transform-style: preserve-3d;
+}
+.flip-card.is-flipped .flip-card__inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card__front,
+.flip-card__back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.flip-card__front {
+  border: 1.5px solid color-mix(in srgb, var(--bg) 25%, transparent);
+}
+
+.flip-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.flip-card__img--byn { opacity: 1; }
+.flip-card__img--color { opacity: 0; }
+
+.flip-card:hover .flip-card__img--byn { opacity: 0; }
+.flip-card:hover .flip-card__img--color { opacity: 1; }
+.flip-card:hover .flip-card__img { transform: scale(1.05); }
+
+.flip-card__back {
+  transform: rotateY(180deg);
+  background: var(--accent-dark);
+  color: var(--bg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+  border: 1.5px solid var(--accent);
+}
+.flip-card__back h3 {
+  font-family: var(--font-hero);
+  font-weight: 900;
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+.flip-card__back p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--bg) 85%, transparent);
+}
+
+@media (min-width: 860px) {
+  .sobre__grid { grid-template-columns: 1fr 1fr; align-items: center; }
+}
+
+/* =========================================================
    2. ¿POR QUÉ RESTAURAR?
    ========================================================= */
 .why {

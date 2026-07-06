@@ -25,6 +25,45 @@
     } else { run(); }
   }
 
+  /* Contador animado de alumnos */
+  function initAlumnosCounter() {
+    const el = document.getElementById('alumnosCounter');
+    if (!el) return;
+    const target = 150, duration = 1400;
+    let hasRun = false;
+    function run() {
+      if (hasRun) return; hasRun = true;
+      const start = performance.now();
+      function step(now) {
+        const p = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(eased * target).toLocaleString('es-AR');
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => { if (e.isIntersecting) { run(); obs.disconnect(); } });
+      }, { threshold: 0.4 }).observe(el);
+    } else { run(); }
+  }
+
+  /* Flip cards de la sección Sobre RAÍZ */
+  function initFlipCards() {
+    const cards = document.querySelectorAll('.flip-card');
+    if (!cards.length) return;
+    cards.forEach(card => {
+      card.addEventListener('click', () => card.classList.toggle('is-flipped'));
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.classList.toggle('is-flipped');
+        }
+      });
+    });
+  }
+
   /* Toggle antes/después del sillón en el hero (click en la imagen) */
   function initHeroToggle() {
     const chair = document.getElementById('heroChair');
@@ -173,6 +212,7 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     initWoodCounter();
+    initAlumnosCounter();
     initHeroToggle();
     initWaitlist();
     initScrollAnimations();
@@ -180,5 +220,5 @@
     initHowCards();
     initFaq();
     initNav();
+    initFlipCards();
   });
-})();
