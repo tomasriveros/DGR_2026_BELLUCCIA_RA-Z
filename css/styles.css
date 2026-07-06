@@ -1087,7 +1087,6 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   border-radius: 1.5rem;
   padding: 2.5rem;
   background: color-mix(in srgb, var(--bg) 5%, transparent);
-  margin-top: -3rem;
 }
 
 .reviews__track-wrap {
