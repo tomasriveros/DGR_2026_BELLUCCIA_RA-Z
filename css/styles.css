@@ -343,33 +343,9 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   pointer-events: auto;
 }
 
-.hero__toggle {
-  position: absolute;
-  top: 4%;
-  right: 6%;
-  z-index: 5;
-  width: 92px;
-  height: 92px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #AB6A3A;
-  border: var(--border-w) solid var(--ink);
-  box-shadow: var(--shadow-sm);
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-  padding: 0;
+.hero__chair {
+  cursor: url('../assets/herramienta.png') 16 16, pointer;
 }
-.hero__toggle img {
-  width: 60%;
-  height: 60%;
-  object-fit: contain;
-}
-.hero__toggle:hover { transform: translate(-2px,-2px); box-shadow: var(--shadow-md); }
-.hero__toggle:active { transform: translate(1px,1px); box-shadow: 2px 2px 0 0 var(--ink); }
-.hero__toggle[aria-pressed="true"] { background: var(--forest); }
-.hero__toggle:focus-visible { outline: 3px solid var(--forest); outline-offset: 3px; }
 
 /* =========================================================
    2. ¿POR QUÉ RESTAURAR?

@@ -25,15 +25,14 @@
     } else { run(); }
   }
 
-  /* Toggle antes/después del sillón en el hero */
+  /* Toggle antes/después del sillón en el hero (click en la imagen) */
   function initHeroToggle() {
-    const btn = document.getElementById('heroToggle');
+    const chair = document.getElementById('heroChair');
     const before = document.getElementById('heroChairBefore');
     const after = document.getElementById('heroChairAfter');
-    if (!btn || !before || !after) return;
-    btn.addEventListener('click', () => {
-      const showingAfter = btn.getAttribute('aria-pressed') === 'true';
-      btn.setAttribute('aria-pressed', String(!showingAfter));
+    if (!chair || !before || !after) return;
+    chair.addEventListener('click', () => {
+      const showingAfter = after.classList.contains('is-active');
       before.classList.toggle('is-active', showingAfter);
       after.classList.toggle('is-active', !showingAfter);
     });
