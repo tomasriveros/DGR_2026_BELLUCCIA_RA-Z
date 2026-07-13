@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAÍZ — Biblioteca UI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/curso.css">
+<link rel="stylesheet" href="css/ui-library.css">
+</head>
+<body>
+
+<div class="uilib-wrap">
+
+  <div class="uilib-header">
+    <p class="eyebrow">RAÍZ — Design System</p>
+    <h1>Biblioteca de componentes</h1>
+    <p>Piezas reutilizables del sitio: colores, tipografía y componentes ya existentes en <code>styles.css</code> y <code>curso.css</code>. Esta página no forma parte del sitio público, es solo referencia.</p>
+  </div>
+
+  <!-- ============ COLORES ============ -->
+  <section class="uilib-section">
+    <h2 class="uilib-section__title">01 — Colores</h2>
+    <div class="uilib-swatches">
+      <div class="uilib-swatch">
+        <div class="uilib-swatch__chip" style="background:var(--bg)"></div>
+        <div class="uilib-swatch__label"><b>--bg</b>#F7F1E6</div>
+      </div>
+      <div class="uilib-swatch">
+        <div class="uilib-swatch__chip" style="background:var(--bg-soft)"></div>
+        <div class="uilib-swatch__label"><b>--bg-soft</b>#EFE6D4</div>
+      </div>
+      <div class="uilib-swatch">
+        <div class="uilib-swatch__chip" style="background:var(--ink)"></div>
+        <div class="uilib-swatch__label"><b>--ink</b>#1A2B20</div>
+      </div>
+      <div class="uilib-swatch">
+        <div class="uilib-swatch__chip" style="background:#2A362C"></div>
+        <div class="uilib-swatch__label"><b>Verde marcas</b>#2A362C</div>
+      </div>
+      <div class="uilib-swatch">
+        <div class="uilib-swatch__chip" style="background:var(--accent)"></div>
+        <div class="uilib-swatch__label"><b>--accent</b>#C6EE56 (lima)</div>
+      </div>
+      <div class="uilib-swatch">
+        <div class="uilib-swatch__chip" style="background:var(--forest)"></div>
+        <div class="uilib-swatch__label"><b>--forest</b>#1F6F5C</div>
+      </div>
+    </div>
+    <p class="uilib-code-note">Todas viven en <code>:root</code> al principio de <code>styles.css</code>. El verde de marcas (<code>#2A362C</code>) se repite a mano en varios lugares — no tiene variable propia todavía.</p>
+  </section>
+
+  <!-- ============ TIPOGRAFÍA ============ -->
+  <section class="uilib-section">
+    <h2 class="uilib-section__title">02 — Tipografía</h2>
+
+    <div class="uilib-type-row">
+      <span class="uilib-type-tag">--font-hero<br>Recoleta Black</span>
+      <span style="font-family:var(--font-hero); font-weight:900; font-size:2.2rem;">Restaurá historias</span>
+    </div>
+    <div class="uilib-type-row">
+      <span class="uilib-type-tag">--font-display<br>Fraunces</span>
+      <span style="font-family:var(--font-display); font-weight:600; font-size:2rem;">Restaurá historias</span>
+    </div>
+    <div class="uilib-type-row">
+      <span class="uilib-type-tag">--font-cartel<br>Montserrat</span>
+      <span style="font-family:var(--font-cartel); font-weight:600; font-size:1.1rem; letter-spacing:0.03em;">Restaurá historias</span>
+    </div>
+    <div class="uilib-type-row">
+      <span class="uilib-type-tag">--font-body<br>Inter</span>
+      <span style="font-family:var(--font-body); font-size:1.05rem;">Un curso online pensado para quienes quieren crear con sus manos.</span>
+    </div>
+    <div class="uilib-type-row">
+      <span class="uilib-type-tag">--font-mono<br>JetBrains Mono</span>
+      <span style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.05em;">CURSO INSIGNIA · 8 SEMANAS</span>
+    </div>
+  </section>
+
+  <!-- ============ EYEBROWS / ETIQUETAS ============ -->
+  <section class="uilib-section">
+    <h2 class="uilib-section__title">03 — Eyebrows (etiquetas de sección)</h2>
+    <div class="uilib-row">
+      <p class="eyebrow">Programa</p>
+    </div>
+    <div class="uilib-card-demo uilib-card-demo--dark" style="margin-top:1rem;">
+      <p class="eyebrow eyebrow--light">Próximamente</p>
+    </div>
+    <p class="uilib-code-note">Clase <code>.eyebrow</code> (oscura, para fondos claros) y <code>.eyebrow--light</code> (clara, para fondos oscuros). La variante "píldora" con borde redondeado usada en Cursos es un estilo aparte, específico de esa sección.</p>
+  </section>
+
+  <!-- ============ BOTONES ============ -->
+  <section class="uilib-section">
+    <h2 class="uilib-section__title">04 — Botones</h2>
+    <div class="uilib-row">
+      <a href="#" class="btn btn--primary">Ver programa</a>
+      <a href="#" class="btn btn--accent">Quiero aprender</a>
+      <a href="#" class="btn btn--ghost">Conocé RAÍZ</a>
+    </div>
+    <div class="uilib-card-demo uilib-card-demo--dark" style="margin-top:1rem;">
+      <a href="#" class="btn btn--ghost btn--ghost-light">Ver programa</a>
+    </div>
+    <p class="uilib-code-note">Clases: <code>.btn.btn--primary</code>, <code>.btn.btn--accent</code>, <code>.btn.btn--ghost</code> (y <code>.btn--ghost-light</code> para fondo oscuro). Todos tienen la sombra tipo "cómic" (<code>--shadow-sm</code>) que se agranda al hacer hover.</p>
+  </section>
+
+  <!-- ============ TARJETA DE CURSO ============ -->
+  <section class="uilib-section">
+    <h2 class="uilib-section__title">05 — Tarjeta de curso</h2>
+    <div class="uilib-mini-grid">
+      <article class="course-card">
+        <div class="course-card__img-wrap">
+          <div style="width:100%;height:100%;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:0.75rem;color:color-mix(in srgb, var(--ink) 40%, transparent);">imagen / video</div>
+          <span class="course-card__tag">Plan Roble</span>
+        </div>
+        <div class="course-card__body">
+          <h3 class="course-card__title">Nombre del curso</h3>
+          <p class="course-card__desc">Descripción breve del curso y a quién está dirigido.</p>
+          <div class="course-card__divider"></div>
+          <ul class="course-card__info">
+            <li><span class="course-card__info-label">Duración:</span> 8 semanas</li>
+            <li><span class="course-card__info-label">Nivel:</span> Principiante</li>
+          </ul>
+          <p class="course-card__price">$45.000</p>
+          <a href="#" class="btn btn--primary course-card__btn">Ver programa</a>
+        </div>
+      </article>
+
+      <article class="course-card course-card--featured">
+        <span class="course-card__badge">El más elegido</span>
+        <div class="course-card__img-wrap">
+          <div style="width:100%;height:100%;background:color-mix(in srgb, var(--bg) 15%, transparent);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:0.75rem;color:var(--bg);">imagen / video</div>
+        </div>
+        <div class="course-card__body">
+          <h3 class="course-card__title">Curso destacado</h3>
+          <p class="course-card__desc">Esta es la variante con más contraste, para el plan que querés vender más.</p>
+          <div class="course-card__divider"></div>
+          <ul class="course-card__info">
+            <li><span class="course-card__info-label">Duración:</span> 12 semanas</li>
+            <li><span class="course-card__info-label">Nivel:</span> Todos los niveles</li>
+          </ul>
+          <p class="course-card__price">$65.000</p>
+          <a href="#" class="btn btn--primary course-card__btn">Ver programa</a>
+        </div>
+      </article>
+    </div>
+    <p class="uilib-code-note">Clase base <code>.course-card</code>, variante destacada <code>.course-card--featured</code>. Vive en la sección "4. CURSOS" de <code>styles.css</code>.</p>
+  </section>
+
+  <!-- ============ FAQ ACORDEÓN ============ -->
+  <section class="uilib-section">
+    <h2 class="uilib-section__title">06 — Acordeón FAQ</h2>
+    <div class="faq__list" role="list" style="max-width:600px;">
+      <div class="faq__item" role="listitem">
+        <button class="faq__question" aria-expanded="true" aria-controls="uilib-faq-1">
+          <span>¿Pregunta de ejemplo?</span>
+          <svg class="faq__icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq__answer" id="uilib-faq-1">
+          <p>Esta es la respuesta, visible porque este ítem empieza abierto como ejemplo.</p>
+        </div>
+      </div>
+      <div class="faq__item" role="listitem">
+        <button class="faq__question" aria-expanded="false" aria-controls="uilib-faq-2">
+          <span>¿Otra pregunta?</span>
+          <svg class="faq__icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq__answer" id="uilib-faq-2" hidden>
+          <p>Respuesta oculta por defecto (necesita <code>js/main.js</code> para abrir/cerrar con clic).</p>
+        </div>
+      </div>
+    </div>
+    <p class="uilib-code-note">Clase <code>.faq__item</code> / <code>.faq__question</code> / <code>.faq__answer</code>. El comportamiento de abrir/cerrar lo maneja <code>initFaq()</code> en <code>main.js</code> — en esta página de referencia no está enlazado el JS, por eso no es clickeable acá.</p>
+  </section>
+
+  <!-- ============ BADGE / ETIQUETAS DE IMAGEN ============ -->
+  <section class="uilib-section">
+    <h2 class="uilib-section__title">07 — Etiquetas sobre imagen (antes/después)</h2>
+    <div class="uilib-row">
+      <span class="transform-slider__label transform-slider__label--before" style="position:static;">Antes</span>
+      <span class="transform-slider__label transform-slider__label--after" style="position:static;">Después</span>
+    </div>
+    <p class="uilib-code-note">Clases de <code>curso.css</code>: <code>.transform-slider__label--before</code> / <code>--after</code>. Se usan sobre las imágenes en la sección "Antes y después" de la página de curso.</p>
+  </section>
+
+  <!-- ============ ESPACIADO ============ -->
+  <section class="uilib-section">
+    <h2 class="uilib-section__title">08 — Espaciado y estructura</h2>
+    <ul style="font-family: var(--font-mono); font-size: 0.85rem; line-height: 2;">
+      <li><code>--max-w: 1240px</code> — ancho máximo de contenido centrado</li>
+      <li><code>--space-section: clamp(3rem, 6vw, 5rem)</code> — padding vertical estándar de sección</li>
+      <li><code>--border-w: 2px</code> — grosor de borde estándar en tarjetas y botones</li>
+      <li><code>--shadow-sm / md / lg</code> — sombra tipo "cómic" desplazada, escalable en 3 tamaños</li>
+    </ul>
+  </section>
+
+</div>
+
+</body>
+</html>
