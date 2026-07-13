@@ -201,6 +201,55 @@
     setPos(50);
   }
 
+  /* Sliders antes/después en la página del curso (uno por proyecto) */
+  function initTransformSliders() {
+    const sliders = document.querySelectorAll('.transform-slider');
+    if (!sliders.length) return;
+
+    sliders.forEach(slider => {
+      const after   = slider.querySelector('.transform-slider__after');
+      const divider = slider.querySelector('.transform-slider__divider');
+      const handle  = slider.querySelector('.transform-slider__handle');
+      if (!after || !divider || !handle) return;
+
+      let isDragging = false;
+
+      function setPos(percent) {
+        const p = Math.min(100, Math.max(0, percent));
+        after.style.clipPath = `inset(0 ${100 - p}% 0 0)`;
+        divider.style.left = `${p}%`;
+        handle.style.left = `${p}%`;
+        handle.setAttribute('aria-valuenow', Math.round(p));
+      }
+
+      function pctFromX(clientX) {
+        const rect = slider.getBoundingClientRect();
+        return ((clientX - rect.left) / rect.width) * 100;
+      }
+
+      handle.addEventListener('mousedown', e => { isDragging = true; setPos(pctFromX(e.clientX)); e.preventDefault(); });
+      window.addEventListener('mousemove', e => { if (isDragging) setPos(pctFromX(e.clientX)); });
+      window.addEventListener('mouseup', () => { isDragging = false; });
+
+      handle.addEventListener('touchstart', e => { isDragging = true; setPos(pctFromX(e.touches[0].clientX)); }, { passive: true });
+      window.addEventListener('touchmove', e => { if (isDragging) { setPos(pctFromX(e.touches[0].clientX)); e.preventDefault(); } }, { passive: false });
+      window.addEventListener('touchend', () => { isDragging = false; });
+
+      slider.addEventListener('mousedown', e => {
+        if (e.target === handle || handle.contains(e.target)) return;
+        isDragging = true; setPos(pctFromX(e.clientX));
+      });
+
+      handle.addEventListener('keydown', e => {
+        const cur = parseFloat(divider.style.left) || 50;
+        if (e.key === 'ArrowLeft') { setPos(cur - 5); e.preventDefault(); }
+        if (e.key === 'ArrowRight') { setPos(cur + 5); e.preventDefault(); }
+      });
+
+      setPos(50);
+    });
+  }
+
 /* Showroom interactivo: mueble + acabados */
   function initShowroom() {
     const track = document.getElementById('showroomTrack');
@@ -338,6 +387,7 @@
     initWaitlist();
     initScrollAnimations();
     initWhySlider();
+    initTransformSliders();
     initShowroom();
     initFaq();
     initNav();

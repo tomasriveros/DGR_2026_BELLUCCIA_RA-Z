@@ -1391,6 +1391,9 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
     align-items: flex-start;
     min-height: auto;
   }
+  .capsule__track {
+    animation-duration: 10s;
+  }
   .hero__illustration {
     min-height: 320px;
   }
@@ -1639,8 +1642,8 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   position: relative;
   z-index: 2;
   width: 55%;
-  max-width: 560px;
-  flex-shrink: 0;
+  max-width: 620px;
+  flex-shrink: 1;
 }
 
 .showroom__stage { position: relative; }

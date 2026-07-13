@@ -43,12 +43,13 @@ main > section {
 .cp-hero__title {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(3rem, 8vw, 6rem);
-  line-height: 1.0;
+  font-size: clamp(2.2rem, 10vw, 6rem);
+  line-height: 1.05;
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: var(--bg);
   margin-bottom: 1.25rem;
+  word-break: break-word;
 }
 
 .cp-hero__subtitle {
@@ -329,6 +330,128 @@ main > section {
 }
 
 /* =========================================================
+   TIPOGRAFÍA RECOLETA BLACK — títulos de esta página
+   ========================================================= */
+
+.cp-hero__title {
+  font-family: var(--font-hero);
+  font-weight: 900;
+}
+
+.cp-for__title {
+  font-family: var(--font-hero);
+  font-weight: 900;
+}
+
+.cp-program .section-title,
+.cp-transforms .section-title {
+  font-family: var(--font-hero);
+  font-weight: 900;
+}
+
+.cp-program__content h3 {
+  font-family: var(--font-hero);
+  font-weight: 900;
+}
+
+.cp-cta__title {
+  font-family: var(--font-hero);
+  font-weight: 900;
+}
+
+.cp-for .eyebrow,
+.cp-program .eyebrow,
+.cp-transforms .eyebrow {
+  font-family: var(--font-cartel);
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2A362C;
+  background: transparent;
+  border: 1.5px solid #2A362C;
+  border-radius: 999px;
+  padding: 0.5rem 1.4rem;
+  margin-bottom: 1rem;
+}
+.cp-program__item.fade-up .cp-program__num {
+  transform: scale(0.85);
+  transition: transform 0.5s ease 0.15s;
+}
+.cp-program__item.fade-up.is-visible .cp-program__num {
+  transform: scale(1);
+}
+.transform-slider {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: var(--border-w) solid var(--ink);
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.transform-slider__before,
+.transform-slider__after { position: absolute; inset: 0; }
+.transform-slider__before { z-index: 1; }
+.transform-slider__after  { z-index: 2; clip-path: inset(0 50% 0 0); }
+.transform-slider__before img,
+.transform-slider__after img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.transform-slider__divider {
+  position: absolute; top: 0; bottom: 0;
+  width: 3px; background: var(--bg);
+  left: 50%; transform: translateX(-50%);
+  z-index: 4; pointer-events: none;
+}
+
+.transform-slider__handle {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 999px;
+  background: var(--bg);
+  border: var(--border-w) solid var(--ink);
+  box-shadow: var(--shadow-sm);
+  color: var(--ink);
+  font-size: 1rem; line-height: 1;
+  cursor: grab;
+  z-index: 5;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.transform-slider__handle:hover,
+.transform-slider__handle:active {
+  background: var(--accent-dark); color: var(--bg);
+}
+.transform-slider__handle:focus-visible {
+  outline: 3px solid var(--forest); outline-offset: 3px;
+}
+
+.transform-slider__label {
+  position: absolute; top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  padding: 0.3rem 0.65rem; border-radius: 999px;
+  background: var(--bg); color: var(--wood);
+  border: 1.5px solid var(--ink);
+  z-index: 6;
+}
+.transform-slider__label--before { left: 0.75rem; }
+.transform-slider__label--after {
+  right: 0.75rem;
+  background: var(--accent-dark);
+  color: var(--bg);
+  border-color: var(--accent-dark);
+}
+
+
+/* =========================================================
    RESPONSIVE
    ========================================================= */
 @media (min-width: 700px) {
@@ -344,3 +467,5 @@ main > section {
   .cp-hero { padding-left: 3rem; padding-right: 3rem; }
   main > section { padding-left: 3rem; padding-right: 3rem; }
 }
+
+
