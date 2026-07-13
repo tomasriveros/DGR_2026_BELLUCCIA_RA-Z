@@ -1833,3 +1833,14 @@ main > section:not(.hero):not(.why):not(.cta-final):not(.capsule) {
   .showroom__arrow--prev { left: -0.5rem; }
   .showroom__arrow--next { right: -0.5rem; }
 }
+
+.uilib-footer-link {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: color-mix(in srgb, var(--ink) 40%, transparent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
