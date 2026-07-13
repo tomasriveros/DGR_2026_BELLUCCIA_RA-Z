@@ -52,16 +52,27 @@
 </div>
       </div>
       <div class="hero__illustration">
-  <div class="hero__chair" id="heroChair">
-    <img src="assets/sillonhechoverga.png" alt="Sillón antes de restaurar" class="hero__chair-img hero__chair-img--before is-active" id="heroChairBefore" loading="eager">
-    <img src="assets/sillonclean.png" alt="Sillón después de restaurado" class="hero__chair-img hero__chair-img--after" id="heroChairAfter" loading="eager">
+  <div class="hero__slider" id="heroSlider">
+    <div class="hero__slide hero__slide--before">
+      <img src="assets/sillonviejohero.png" alt="Sillón antes de restaurar" loading="eager">
+    </div>
+    <div class="hero__slide hero__slide--after" id="heroAfter">
+      <img src="assets/sillonnuevohero.png" alt="Sillón después de restaurado" loading="eager">
+    </div>
+    <div class="hero__slider-divider" id="heroDivider"></div>
+    <button type="button" class="hero__slider-handle" id="heroHandle" role="slider" aria-label="Deslizá para ver el antes y después" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+      <span aria-hidden="true">↔</span>
+    </button>
   </div>
 </div>
     </section>
 
     <!-- SOBRE RAÍZ -->
-    <section class="sobre fade-up" id="sobre-raiz">
-      <div class="sobre__stat">
+     <section class="sobre fade-up" id="sobre-raiz">
+    <div class="sobre__eyebrow-wrap">
+      <span class="sobre__eyebrow">Más que un curso</span>
+    </div>
+    <div class="sobre__stat">
         <span class="sobre__stat-number" id="alumnosCounter">0</span>
         <div class="sobre__stat-copy">
           <h3 class="sobre__stat-title">Alumnos<br>comenzaron<br>a restaurar</h3>
@@ -69,97 +80,175 @@
         </div>
       </div>
 
-      <div class="sobre__grid">
-        <div class="sobre__copy">
-          <span class="sobre__eyebrow">Sobre RAÍZ</span>
-          <h2 class="sobre__title">Le devolvemos vida<br>a los muebles que<br>muchos ya habían<br>dado por perdidos.</h2>
-          <p class="sobre__desc">Cada mueble guarda una historia que merece continuar. En RAÍZ te enseñamos a descubrir su potencial, comprender su valor y aplicar las técnicas necesarias para devolverle vida sin perder aquello que lo hace único. Porque restaurar no es empezar de nuevo, es respetar el pasado mientras construís el futuro.</p>
+      <div class="sobre__benefits">
+        <div class="benefit">
+          <span class="benefit__icon">
+            <img src="assets/icono1.png" alt="">
+          </span>
+          <h3 class="benefit__title">Proyectos reales</h3>
+          <p class="benefit__desc">Restaurá muebles reales desde la primera clase, aplicando cada técnica sobre piezas con historia.</p>
         </div>
 
-        <div class="sobre__cards">
-          <img src="assets/cardcolor1.jpg" alt="Sobre RAÍZ" loading="lazy">
+        <div class="benefit">
+          <span class="benefit__icon">
+            <img src="assets/icono2.png" alt="">
+          </span>
+          <h3 class="benefit__title">Comunidad activa</h3>
+          <p class="benefit__desc">Compartí avances, resolvé dudas y aprendé junto a una comunidad apasionada por la restauración.</p>
+        </div>
+
+        <div class="benefit">
+          <span class="benefit__icon">
+            <img src="assets/icono3.png" alt="">
+          </span>
+          <h3 class="benefit__title">Técnicas profesionales</h3>
+          <p class="benefit__desc">Aprendé métodos y procesos utilizados para restaurar muebles con acabados de calidad.</p>
+        </div>
+      </div>
+
+      <div class="sobre__materials">
+        <div class="sobre__materials-head">
+          <h3 class="sobre__materials-title">Trabajamos con materiales de calidad</h3>
+          <p class="sobre__materials-desc">Seleccionamos herramientas y materiales confiables para que puedas concentrarte en aprender, sin complicaciones.</p>
+        </div>
+
+        <div class="brands">
+          <div class="brands__viewport">
+            <div class="brands__track" id="brandsTrack">
+              <button type="button" class="brands__item" data-name="Bosch" data-cat="Herramientas eléctricas" data-desc="Lijadoras, atornilladores y herramientas para cada etapa del proceso.">
+                <img src="assets/Boschlogo.png" alt="Bosch">
+              </button>
+              <button type="button" class="brands__item" data-name="Stanley" data-cat="Herramientas manuales" data-desc="Instrumentos de precisión para trabajar la madera con seguridad.">
+                <img src="assets/stanleylogo.svg" alt="Stanley">
+              </button>
+              <button type="button" class="brands__item" data-name="Polacrin" data-cat="Pinturas y acabados" data-desc="Barnices, tintes y protectores para realzar la veta natural.">
+                <img src="assets/logopolacrin.png" alt="Polacrin">
+              </button>
+              <button type="button" class="brands__item" data-name="Cetol" data-cat="Protección para madera" data-desc="Acabados resistentes que prolongan la vida útil del mueble.">
+                <img src="assets/cetollogo.png" alt="Cetol">
+              </button>
+              <button type="button" class="brands__item" data-name="Sinteplast" data-cat="Pinturas y esmaltes" data-desc="Soluciones para renovar muebles con terminaciones modernas.">
+                <img src="assets/sinteplastlogo.png" alt="Sinteplast">
+              </button>
+              <button type="button" class="brands__item" data-name="3M" data-cat="Lijas y abrasivos" data-desc="Preparación de superficies para un acabado uniforme y profesional.">
+                <img src="assets/3mlogo.webp" alt="3M">
+              </button>
+              <button type="button" class="brands__item" data-name="Fastix" data-cat="Adhesivos" data-desc="Pegamentos y selladores para reparaciones resistentes y duraderas.">
+                <img src="assets/fastixlogo.png" alt="Fastix">
+              </button>
+              <!-- Set duplicado para el loop infinito, oculto para lectores de pantalla -->
+              <button type="button" class="brands__item" tabindex="-1" aria-hidden="true" data-name="Bosch" data-cat="Herramientas eléctricas" data-desc="Lijadoras, atornilladores y herramientas para cada etapa del proceso.">
+                <img src="assets/Boschlogo.png" alt="">
+              </button>
+              <button type="button" class="brands__item" tabindex="-1" aria-hidden="true" data-name="Stanley" data-cat="Herramientas manuales" data-desc="Instrumentos de precisión para trabajar la madera con seguridad.">
+                <img src="assets/stanleylogo.svg" alt="">
+              </button>
+              <button type="button" class="brands__item" tabindex="-1" aria-hidden="true" data-name="Polacrin" data-cat="Pinturas y acabados" data-desc="Barnices, tintes y protectores para realzar la veta natural.">
+                <img src="assets/logopolacrin.png" alt="">
+              </button>
+              <button type="button" class="brands__item" tabindex="-1" aria-hidden="true" data-name="Cetol" data-cat="Protección para madera" data-desc="Acabados resistentes que prolongan la vida útil del mueble.">
+                <img src="assets/cetollogo.png" alt="">
+              </button>
+              <button type="button" class="brands__item" tabindex="-1" aria-hidden="true" data-name="Sinteplast" data-cat="Pinturas y esmaltes" data-desc="Soluciones para renovar muebles con terminaciones modernas.">
+                <img src="assets/sinteplastlogo.png" alt="">
+              </button>
+              <button type="button" class="brands__item" tabindex="-1" aria-hidden="true" data-name="3M" data-cat="Lijas y abrasivos" data-desc="Preparación de superficies para un acabado uniforme y profesional.">
+                <img src="assets/3mlogo.webp" alt="">
+              </button>
+              <button type="button" class="brands__item" tabindex="-1" aria-hidden="true" data-name="Fastix" data-cat="Adhesivos" data-desc="Pegamentos y selladores para reparaciones resistentes y duraderas.">
+                <img src="assets/fastixlogo.png" alt="">
+              </button>
+            </div>
+          </div>
+
+          <div class="brands__tooltip" id="brandsTooltip" role="status" aria-live="polite">
+            <span class="brands__tooltip-cat" id="brandsTooltipCat"></span>
+            <strong class="brands__tooltip-name" id="brandsTooltipName"></strong>
+            <p class="brands__tooltip-desc" id="brandsTooltipDesc"></p>
+            <span class="brands__tooltip-arrow"></span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CARRUSEL TESTIMONIOS -->
-    <section class="reviews" id="testimonios">
-      <div class="reviews__head">
-        <h2 class="reviews__title">Lo que opinan nuestros alumnos</h2>
-        <p class="reviews__subtitle">Experiencias reales de personas que restauraron su primer mueble junto a RAÍZ.</p>
-      </div>
+    <!-- SHOWROOM INTERACTIVO -->
+<section class="showroom fade-up" id="showroom">
+  <div class="section-head">
+    <span class="eyebrow">Elegí tu estilo</span>
+    <h2 class="section-title">Imaginá su próxima versión.</h2>
+    <p class="section-desc">Cambiá acabados, descubrí diferentes estilos y encontrá la personalidad de cada pieza.</p>
+  </div>
 
-      <div class="reviews__card">
-      <div class="reviews__track-wrap">
-        <div class="reviews__track" id="reviewsTrack">
+  <div class="showroom__display">
+    <button class="showroom__arrow showroom__arrow--prev" aria-label="Mueble anterior">◀</button>
+    <div class="showroom__mueble">
+      <div class="showroom__stage">
 
-          <div class="reviews__slide">
-            <strong>Fernando Torres</strong>
-            <p>"No tenía experiencia ni herramientas profesionales. En pocas semanas pude restaurar mi primera mesa y el resultado superó mis expectativas."</p>
-          </div>
-          <div class="reviews__slide">
-            <strong>Valentina Méndez</strong>
-            <p>"Heredé la cómoda de mi abuela y no sabía por dónde empezar. RAÍZ me dio el paso a paso y hoy es la pieza favorita de mi cuarto."</p>
-          </div>
-          <div class="reviews__slide">
-            <strong>Martín Ríos</strong>
-            <p>"Pensaba que restaurar era para gente con mucha experiencia. El curso me demostró que con la guía correcta cualquiera puede lograrlo."</p>
-          </div>
-          <div class="reviews__slide">
-            <strong>Lucía Paredes</strong>
-            <p>"Lo que más me sorprendió fue la calidad del acabado final. Nadie puede creer que lo hice yo misma desde cero."</p>
-          </div>
-          <div class="reviews__slide">
-            <strong>Camila Ortega</strong>
-            <p>"Tenía un sillón de mi bisabuelo completamente roto. Hoy está restaurado y en el living de mi casa. Cada vez que lo veo pienso en él."</p>
-          </div>
-          <div class="reviews__slide">
-            <strong>Santiago Vera</strong>
-            <p>"Los materiales que recomiendan son fáciles de conseguir y económicos. No necesité gastar fortunas para tener un resultado increíble."</p>
-          </div>
-          <div class="reviews__slide">
-            <strong>Florencia Núñez</strong>
-            <p>"El foro de consultas fue clave. Cada vez que tenía una duda alguien me respondía rápido con consejos reales y precisos."</p>
-          </div>
-          <div class="reviews__slide">
-            <strong>Ignacio Salinas</strong>
-            <p>"Empecé el curso sin saber nada de madera. Hoy restauré tres muebles y ya me están pidiendo que les restaure piezas a amigos."</p>
-          </div>
-          <div class="reviews__slide">
-            <strong>Agustina Romero</strong>
-            <p>"La silla que restauré estaba en un depósito desde hace diez años. Ahora preside la mesa del comedor y toda la familia pregunta de dónde salió."</p>
-          </div>
-          <div class="reviews__slide">
-            <strong>Diego Herrera</strong>
-            <p>"Me lo recomendó una amiga y no me arrepiento para nada. Las clases son claras, bien explicadas y se pueden ver cuando uno quiere."</p>
-          </div>
-          <div class="reviews__slide">
-            <strong>Rocío Giménez</strong>
-            <p>"Aprendí a leer el mueble antes de tocar nada. Eso cambió todo. Ahora entiendo qué necesita cada pieza antes de intervenir."</p>
-          </div>
-          <div class="reviews__slide">
-            <strong>Tomás Villareal</strong>
-            <p>"El certificado fue un plus inesperado. Lo tengo enmarcado al lado del mueble que restauré. Un recuerdo doble."</p>
-          </div>
-          <div class="reviews__slide">
-            <strong>Mariana Solís</strong>
-            <p>"Restaurar el escritorio de mi papá fue una experiencia muy emotiva. RAÍZ me dio las herramientas técnicas pero también la confianza para hacerlo."</p>
-          </div>
+        <div class="showroom__viewport">
+          <div class="showroom__track" id="showroomTrack">
 
+            <div class="showroom__slide" data-nombre="Sillón Vintage" data-desc="Un sillón renovado desde su estructura hasta el tapizado, combinando técnicas tradicionales con materiales actuales. El resultado es una pieza cómoda, resistente y lista para una segunda vida.">
+              <img class="showroom__img is-active" data-acabado="nogal" src="assets/sillon-nogal.png" alt="Sillón restaurado, acabado nogal">
+              <img class="showroom__img" data-acabado="roble" src="assets/sillon-roble.png" alt="Sillón restaurado, acabado roble">
+              <img class="showroom__img" data-acabado="blanco-vintage" src="assets/sillon-blanco-vintage.png" alt="Sillón restaurado, blanco vintage">
+              <img class="showroom__img" data-acabado="negro-mate" src="assets/sillon-negro-mate.png" alt="Sillón restaurado, negro mate">
+            </div>
+
+            <div class="showroom__slide" data-nombre="Cómoda Clásica" data-desc="Una cómoda restaurada respetando su diseño original y realzando la belleza natural de la madera. Sus nuevos acabados protegen la superficie y le permiten seguir formando parte de nuevos espacios.">
+              <img class="showroom__img is-active" data-acabado="nogal" src="assets/comoda-nogal.png" alt="Cómoda restaurada, acabado nogal">
+              <img class="showroom__img" data-acabado="roble" src="assets/comoda-roble.png" alt="Cómoda restaurada, acabado roble">
+              <img class="showroom__img" data-acabado="blanco-vintage" src="assets/comoda-blanco-vintage.png" alt="Cómoda restaurada, blanco vintage">
+              <img class="showroom__img" data-acabado="negro-mate" src="assets/comoda-negro-mate.png" alt="Cómoda restaurada, negro mate">
+            </div>
+
+            <div class="showroom__slide" data-nombre="Mesa comedor" data-desc="Una mesa recuperada para seguir siendo el centro de nuevos encuentros. La restauración devuelve estabilidad, renueva el acabado y conserva la esencia de una pieza con historia. ">
+              <img class="showroom__img is-active" data-acabado="nogal" src="assets/mesa-nogal.png" alt="Mesa restaurada, acabado nogal">
+              <img class="showroom__img" data-acabado="roble" src="assets/mesa-roble.png" alt="Mesa restaurada, acabado roble">
+              <img class="showroom__img" data-acabado="blanco-vintage" src="assets/mesa-blanco-vintage.png" alt="Mesa restaurada, blanco vintage">
+              <img class="showroom__img" data-acabado="negro-mate" src="assets/mesa-negro-mate.png" alt="Mesa restaurada, negro mate">
+            </div>
+
+            <div class="showroom__slide" data-nombre="Biblioteca de Madera" data-desc="Cada estante fue restaurado para recuperar su resistencia y destacar la textura natural de la madera. Una pieza clásica preparada para acompañar muchos años más.">
+              <img class="showroom__img is-active" data-acabado="nogal" src="assets/biblioteca-nogal.png" alt="Biblioteca restaurada, acabado nogal">
+              <img class="showroom__img" data-acabado="roble" src="assets/biblioteca-roble.png" alt="Biblioteca restaurada, acabado roble">
+              <img class="showroom__img" data-acabado="blanco-vintage" src="assets/biblioteca-blanco-vintage.png" alt="Biblioteca restaurada, blanco vintage">
+              <img class="showroom__img" data-acabado="negro-mate" src="assets/biblioteca-negro-mate.png" alt="Biblioteca restaurada, negro mate">
+            </div>
+
+          </div>
         </div>
-      </div>
+
       </div>
 
-      <div class="reviews__controls">
-        <button class="reviews__arrow" id="reviewsPrev" aria-label="Anterior">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+      <div class="showroom__finishes" id="showroomFinishes">
+        <button class="finish is-active" data-acabado="nogal" style="--finish-color:#5C3A21" aria-label="Acabado Nogal">
+          <span class="finish__label">Nogal</span>
         </button>
-        <div class="reviews__dots" id="reviewsDots"></div>
-        <button class="reviews__arrow" id="reviewsNext" aria-label="Siguiente">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+
+        <button class="finish" data-acabado="roble" style="--finish-color:#C9A87C" aria-label="Acabado Roble">
+          <span class="finish__label">Roble</span>
+        </button>
+
+        <button class="finish" data-acabado="blanco-vintage" style="--finish-color:#EFE6D4" aria-label="Acabado Blanco Vintage">
+          <span class="finish__label">Blanco Vintage</span>
+        </button>
+
+        <button class="finish" data-acabado="negro-mate" style="--finish-color:#2B2B2B" aria-label="Acabado Negro Mate">
+          <span class="finish__label">Negro Mate</span>
         </button>
       </div>
-    </section>
+    </div>
+
+    <div class="showroom__info">
+      <h3 class="showroom__name" id="showroomNombre">Sillón</h3>
+      <p class="showroom__desc" id="showroomDesc">
+        Líneas suaves y estructura reforzada, ideal para renovar el living con una pieza con carácter.
+      </p>
+    </div>
+
+    <button class="showroom__arrow showroom__arrow--next" aria-label="Siguiente mueble">▶</button>
+  </div>
+</section>
 
     <!-- 4. EL CURSO -->
     <section class="courses fade-up" id="curso">
@@ -170,135 +259,155 @@
       <div class="courses__grid">
 
         <article class="course-card">
-          <div class="course-card__img-wrap">
-            <img src="assets/planroble.jpg" alt="Restauración Integral" loading="lazy">
-            <span class="course-card__tag">Plan roble</span>
-          </div>
-          <div class="course-card__body">
-            <h3 class="course-card__title">Restauración de Muebles Antiguos</h3>
-            <p class="course-card__desc">Ideal para quienes quieren aprender técnicas específicas para conservar piezas antiguas y respetar su valor original.</p>
-            <div class="course-card__divider"></div>
-            <ul class="course-card__features">
-              <li>8 clases online</li>
-              <li>Introducción a materiales y herramientas</li>
-              <li>Acceso de por vida</li>
-            </ul>
-            <a href="curso.html" class="btn btn--primary course-card__btn">Ver programa</a>
-          </div>
-        </article>
+  <div class="course-card__img-wrap">
+    <img src="assets/planroble.jpg" alt="Restauración Integral" loading="lazy">
+    <video class="course-card__video" muted loop playsinline preload="none">
+      <source src="assets/videomueblesantiguos.mp4" type="video/mp4">
+    </video>
+    <span class="course-card__tag">Plan roble</span>
+  </div>
+  <div class="course-card__body">
+    <h3 class="course-card__title">Restauración de Muebles Antiguos</h3>
+    <p class="course-card__desc">Ideal para quienes quieren aprender técnicas específicas para conservar piezas antiguas y respetar su valor original.</p>
+    <div class="course-card__divider"></div>
+    <ul class="course-card__info">
+      <li><span class="course-card__info-label">Duración:</span> 8 semanas</li>
+      <li><span class="course-card__info-label">Nivel:</span> Principiante</li>
+    </ul>
+    <p class="course-card__price">$45.000</p>
+    <a href="curso.html" class="btn btn--primary course-card__btn">Ver programa</a>
+  </div>
+</article>
 
         <article class="course-card course-card--featured">
-          <span class="course-card__badge">El más elegido</span>
-          <div class="course-card__img-wrap">
-            <img src="assets/elmaselegido.jpg" alt="Tapicería Moderna" loading="lazy">
-            <span class="course-card__tag">El más elegido</span>
-          </div>
-          <div class="course-card__body">
-            <h3 class="course-card__title">Restauración Integral</h3>
-            <p class="course-card__desc">Aprendé a diagnosticar, lijar y devolverle la vida a cualquier pieza de madera desde cero.</p>
-            <div class="course-card__divider"></div>
-            <ul class="course-card__features">
-              <li>12 clases online</li>
-              <li>Foro de consultas activo</li>
-              <li>Certificado de finalización</li>
-            </ul>
-            <a href="curso.html" class="btn btn--primary course-card__btn">Ver programa</a>
-          </div>
-        </article>
+  <span class="course-card__badge">El más elegido</span>
+  <div class="course-card__img-wrap">
+    <img src="assets/elmaselegido.jpg" alt="Tapicería Moderna" loading="lazy">
+    <video class="course-card__video" muted loop playsinline preload="none">
+      <source src="assets/videorestauracionintegral.mp4" type="video/mp4">
+    </video>
+    <span class="course-card__tag">El más elegido</span>
+  </div>
+  <div class="course-card__body">
+    <h3 class="course-card__title">Restauración Integral</h3>
+    <p class="course-card__desc">Aprendé a diagnosticar, lijar y devolverle la vida a cualquier pieza de madera desde cero.</p>
+    <div class="course-card__divider"></div>
+    <ul class="course-card__info">
+      <li><span class="course-card__info-label">Duración:</span> 12 semanas</li>
+      <li><span class="course-card__info-label">Nivel:</span> Todos los niveles</li>
+    </ul>
+    <p class="course-card__price">$65.000</p>
+    <a href="curso.html" class="btn btn--primary course-card__btn">Ver programa</a>
+  </div>
+</article>
 
         <article class="course-card">
-          <div class="course-card__img-wrap">
-            <img src="assets/plancedro.jpg" alt="Pátinas y Acabados Vintage" loading="lazy">
-            <span class="course-card__tag">Plan Cedro</span>
-          </div>
-          <div class="course-card__body">
-            <h3 class="course-card__title">Tapicería Moderna</h3>
-            <p class="course-card__desc">Dominá las técnicas de cinchas, espumas y colocación de textiles contemporáneos.</p>
-            <div class="course-card__divider"></div>
-            <ul class="course-card__features">
-              <li>8 clases online</li>
-              <li>Foro de consultas activo</li>
-              <li>Acceso de por vida</li>
-            </ul>
-            <a href="curso.html" class="btn btn--primary course-card__btn">Ver programa</a>
-          </div>
-        </article>
+  <div class="course-card__img-wrap">
+    <img src="assets/plancedro.jpg" alt="Pátinas y Acabados Vintage" loading="lazy">
+    <video class="course-card__video" muted loop playsinline preload="none">
+      <source src="assets/videotapiceriamoderna.mp4" type="video/mp4">
+    </video>
+    <span class="course-card__tag">Plan Cedro</span>
+  </div>
+  <div class="course-card__body">
+    <h3 class="course-card__title">Tapicería Moderna</h3>
+    <p class="course-card__desc">Dominá las técnicas de cinchas, espumas y colocación de textiles contemporáneos.</p>
+    <div class="course-card__divider"></div>
+    <ul class="course-card__info">
+      <li><span class="course-card__info-label">Duración:</span> 8 semanas</li>
+      <li><span class="course-card__info-label">Nivel:</span> Intermedio</li>
+    </ul>
+    <p class="course-card__price">$45.000</p>
+    <a href="curso.html" class="btn btn--primary course-card__btn">Ver programa</a>
+  </div>
+</article>
 
       </div>
     </section>
 
     <!-- 8. GALERÍA -->
     <section class="gallery fade-up" id="galeria">
-      <div class="section-head">
-        <p class="eyebrow">Galería</p>
-        <h2 class="section-title">Cada pieza<br>tiene una historia.</h2>
+      <div class="section-head" style="text-align:center;">
+        <p class="gallery__eyebrow">Galería</p>
+        <h2 class="gallery__title" style="text-align:center; display:block; width:100%;">Descubrí la transformación de cada pieza.</h2>
       </div>
       <div class="gallery__grid">
         <div class="gallery__item gallery__item--tall">
-          <img src="assets/galeria2.jpeg" alt="Mueble restaurado con laca contemporánea" loading="lazy">
-        </div>
-        <div class="gallery__item">
-          <img src="assets/galeria1.jpeg" alt="Sillón restaurado" loading="lazy">
-        </div>
-        <div class="gallery__item">
-          <img src="assets/galeria3.jpeg" alt="Detalle de madera restaurada" loading="lazy">
-        </div>
-        <div class="gallery__item gallery__item--wide">
-          <img src="assets/galeria4.jpeg" alt="Mesa restaurada en ambiente editorial" loading="lazy">
-        </div>
-      </div>
-    </section>
-
-    <!-- 9. CTA FINAL -->
-    <section class="cta-final fade-up" id="empezar">
-      <div class="cta-final__bg">
-        <img src="assets/imagenfondo.jpeg" alt="Mueble con historia" loading="lazy">
-      </div>
-      <div class="cta-final__scrim"></div>
-      <div class="cta-final__copy">
-        <h2 class="cta-final__title">
-          No heredaste<br>solo un mueble.<br>
-          <span>Heredaste una historia.</span>
-        </h2>
-        <a href="#curso" class="btn btn--primary btn--lg">Empezá hoy</a>
-      </div>
-    </section>
-
-    <!-- MUEBLES CÁPSULA -->
-    <section class="capsule fade-up" id="capsula">
-      <div class="section-head section-head--light">
-        <p class="eyebrow eyebrow--light">Próximamente</p>
-        <h2 class="section-title section-title--light">Muebles Cápsula</h2>
-        <p class="section-desc section-desc--light">
-          A fin de año lanzamos una colección de piezas únicas, ensambladas 100% a partir de
-          retazos de muebles que ya no se podían salvar enteros. Nada se pierde: todo cambia de forma.
-        </p>
-      </div>
-      <div class="bento" id="bentoGrid">
-        <div class="bento__item bento__item--main">
-          <img src="assets/capsula.jpeg" alt="Detalle de ensamblaje de retazos de madera" loading="lazy">
-          <div class="bento__overlay">
-            <span class="bento__tag">Pieza insignia</span>
-            <h3>El primer banco cápsula</h3>
+          <div class="gallery__flip">
+            <div class="gallery__flip-inner">
+              <div class="gallery__flip-front">
+                <img src="assets/galeria2.jpeg" alt="Mueble antes de restaurar" loading="lazy">
+              </div>
+              <div class="gallery__flip-back">
+                <img src="assets/galeria2-2.jpeg" alt="Mueble restaurado" loading="lazy">
+              </div>
+            </div>
           </div>
         </div>
-        <div class="bento__item bento__item--stat">
-          <span class="bento__stat-number" id="woodCounter">0</span>
-          <span class="bento__stat-label">kg de madera recuperada por nuestra comunidad</span>
+        <div class="gallery__item">
+          <div class="gallery__flip">
+            <div class="gallery__flip-inner">
+              <div class="gallery__flip-front">
+                <img src="assets/galeria1.jpeg" alt="Sillón antes de restaurar" loading="lazy">
+              </div>
+              <div class="gallery__flip-back">
+                <img src="assets/galeria1-1.jpeg" alt="Sillón restaurado" loading="lazy">
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="bento__item bento__item--quote">
-          <p>"Restauré la mesa de mi abuelo y ahora como ahí todos los domingos."</p>
-          <span>— Alumna, curso Restauración Integral</span>
+        <div class="gallery__item">
+          <div class="gallery__flip">
+            <div class="gallery__flip-inner">
+              <div class="gallery__flip-front">
+                <img src="assets/galeria3.jpeg" alt="Mueble antes de restaurar" loading="lazy">
+              </div>
+              <div class="gallery__flip-back">
+                <img src="assets/galeria3-3.jpeg" alt="Mueble restaurado" loading="lazy">
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="bento__item bento__item--form">
-          <h3>Sumate a la lista de espera</h3>
-          <p>Te avisamos primero cuando salgan las piezas límite.</p>
-          <form class="bento__email-form" id="waitlistForm">
-            <label for="waitlistEmail" class="sr-only">Tu email</label>
-            <input type="email" id="waitlistEmail" name="email" placeholder="tu@email.com" required>
-            <button type="submit" class="btn btn--accent">Avisame</button>
-          </form>
-          <p class="bento__form-success" id="formSuccess" hidden>¡Listo! Te escribimos apenas lancemos.</p>
+        <div class="gallery__item gallery__item--wide">
+          <div class="gallery__flip">
+            <div class="gallery__flip-inner">
+              <div class="gallery__flip-front">
+                <img src="assets/galeria4.jpeg" alt="Mesa antes de restaurar" loading="lazy">
+              </div>
+              <div class="gallery__flip-back">
+                <img src="assets/galeria4-4.jpeg" alt="Mesa restaurada" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- MUEBLES CÁPSULA -->
+    <!-- MUEBLES CÁPSULA -->
+    <section class="capsule" id="capsula">
+      <div class="capsule__head">
+        <p class="eyebrow eyebrow--light">Próximamente</p>
+        <h2 class="capsule__title">Muebles Cápsula</h2>
+        <p class="capsule__desc">A fin de año lanzamos una colección de piezas únicas, ensambladas 100% a partir de retazos de muebles que ya no se podían salvar enteros.</p>
+      </div>
+      <div class="capsule__marquee-wrap">
+        <div class="capsule__marquee" id="capsuleMarquee">
+          <div class="capsule__track">
+            <img src="assets/capsula1.jpeg" alt="Mueble cápsula 1" loading="lazy">
+            <img src="assets/capsula2.jpeg" alt="Mueble cápsula 2" loading="lazy">
+            <img src="assets/capsula3.jpeg" alt="Mueble cápsula 3" loading="lazy">
+            <img src="assets/capsula4.jpeg" alt="Mueble cápsula 4" loading="lazy">
+            <img src="assets/capsula5.jpeg" alt="Mueble cápsula 5" loading="lazy">
+            <img src="assets/capsula6.jpeg" alt="Mueble cápsula 6" loading="lazy">
+            <img src="assets/capsula1.jpeg" alt="Mueble cápsula 1" loading="lazy">
+            <img src="assets/capsula2.jpeg" alt="Mueble cápsula 2" loading="lazy">
+            <img src="assets/capsula3.jpeg" alt="Mueble cápsula 3" loading="lazy">
+            <img src="assets/capsula4.jpeg" alt="Mueble cápsula 4" loading="lazy">
+            <img src="assets/capsula5.jpeg" alt="Mueble cápsula 5" loading="lazy">
+            <img src="assets/capsula6.jpeg" alt="Mueble cápsula 6" loading="lazy">
+          </div>
         </div>
       </div>
     </section>

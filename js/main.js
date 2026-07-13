@@ -64,17 +64,68 @@
     });
   }
 
-  /* Toggle antes/después del sillón en el hero (click en la imagen) */
-  function initHeroToggle() {
-    const chair = document.getElementById('heroChair');
-    const before = document.getElementById('heroChairBefore');
-    const after = document.getElementById('heroChairAfter');
-    if (!chair || !before || !after) return;
-    chair.addEventListener('click', () => {
-      const showingAfter = after.classList.contains('is-active');
-      before.classList.toggle('is-active', showingAfter);
-      after.classList.toggle('is-active', !showingAfter);
+  /* Video en hover para las tarjetas de curso */
+  function initCourseVideos() {
+    const cards = document.querySelectorAll('.course-card');
+    cards.forEach(card => {
+      const wrap = card.querySelector('.course-card__img-wrap');
+      const video = card.querySelector('.course-card__video');
+      if (!wrap || !video) return;
+      card.addEventListener('mouseenter', () => {
+        wrap.classList.add('is-playing');
+        video.currentTime = 0;
+        video.play();
+      });
+      card.addEventListener('mouseleave', () => {
+        wrap.classList.remove('is-playing');
+        video.pause();
+      });
     });
+  }
+
+  /* Slider antes/después del sillón en el hero (arrastre) */
+  function initHeroSlider() {
+    const slider  = document.getElementById('heroSlider');
+    const after   = document.getElementById('heroAfter');
+    const divider = document.getElementById('heroDivider');
+    const handle  = document.getElementById('heroHandle');
+    if (!slider || !after || !divider || !handle) return;
+
+    let isDragging = false;
+
+    function setPos(percent) {
+      const p = Math.min(100, Math.max(0, percent));
+      after.style.clipPath = `inset(0 ${100 - p}% 0 0)`;
+      divider.style.left = `${p}%`;
+      handle.style.left = `${p}%`;
+      handle.setAttribute('aria-valuenow', Math.round(p));
+    }
+
+    function pctFromX(clientX) {
+      const rect = slider.getBoundingClientRect();
+      return ((clientX - rect.left) / rect.width) * 100;
+    }
+
+    handle.addEventListener('mousedown', e => { isDragging = true; setPos(pctFromX(e.clientX)); e.preventDefault(); });
+    window.addEventListener('mousemove', e => { if (isDragging) setPos(pctFromX(e.clientX)); });
+    window.addEventListener('mouseup', () => { isDragging = false; });
+
+    handle.addEventListener('touchstart', e => { isDragging = true; setPos(pctFromX(e.touches[0].clientX)); }, { passive: true });
+    window.addEventListener('touchmove', e => { if (isDragging) { setPos(pctFromX(e.touches[0].clientX)); e.preventDefault(); } }, { passive: false });
+    window.addEventListener('touchend', () => { isDragging = false; });
+
+    slider.addEventListener('mousedown', e => {
+      if (e.target === handle || handle.contains(e.target)) return;
+      isDragging = true; setPos(pctFromX(e.clientX));
+    });
+
+    handle.addEventListener('keydown', e => {
+      const cur = parseFloat(divider.style.left) || 50;
+      if (e.key === 'ArrowLeft') { setPos(cur - 5); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { setPos(cur + 5); e.preventDefault(); }
+    });
+
+    setPos(50);
   }
 
   /* Formulario lista de espera */
@@ -150,50 +201,52 @@
     setPos(50);
   }
 
-  /* Carrusel de testimonios con autoplay */
-  function initReviews() {
-    const track = document.getElementById('reviewsTrack');
-    const dotsWrap = document.getElementById('reviewsDots');
-    const prev = document.getElementById('reviewsPrev');
-    const next = document.getElementById('reviewsNext');
-    if (!track || !dotsWrap || !prev || !next) return;
+/* Showroom interactivo: mueble + acabados */
+  function initShowroom() {
+    const track = document.getElementById('showroomTrack');
+    if (!track) return;
 
-    const slides = track.querySelectorAll('.reviews__slide');
-    const total = slides.length;
-    let current = 0;
-    let timer;
+    const slides = track.querySelectorAll('.showroom__slide');
+    const finishBtns = document.querySelectorAll('#showroomFinishes .finish');
+    const prevBtn = document.querySelector('.showroom__arrow--prev');
+    const nextBtn = document.querySelector('.showroom__arrow--next');
+    const nombreEl = document.getElementById('showroomNombre');
+    const descEl = document.getElementById('showroomDesc');
+    if (!prevBtn || !nextBtn || !nombreEl || !descEl) return;
 
-    // Crear puntitos
-    slides.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.className = 'reviews__dot' + (i === 0 ? ' is-active' : '');
-      dot.setAttribute('aria-label', `Testimonio ${i + 1}`);
-      dot.addEventListener('click', () => goTo(i));
-      dotsWrap.appendChild(dot);
-    });
+    let currentIndex = 0;
+
+    function renderInfo() {
+      const slide = slides[currentIndex];
+      nombreEl.textContent = slide.dataset.nombre;
+      descEl.textContent = slide.dataset.desc;
+    }
 
     function goTo(index) {
-      current = (index + total) % total;
-      track.style.transform = `translateX(-${current * 100}%)`;
-      dotsWrap.querySelectorAll('.reviews__dot').forEach((d, i) => {
-        d.classList.toggle('is-active', i === current);
+      currentIndex = (index + slides.length) % slides.length;
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      renderInfo();
+    }
+
+    function setFinish(acabado) {
+      slides.forEach(slide => {
+        slide.querySelectorAll('.showroom__img').forEach(img => {
+          img.classList.toggle('is-active', img.dataset.acabado === acabado);
+        });
       });
-      resetTimer();
+      finishBtns.forEach(btn => {
+        btn.classList.toggle('is-active', btn.dataset.acabado === acabado);
+      });
     }
 
-    function resetTimer() {
-      clearInterval(timer);
-      timer = setInterval(() => goTo(current + 1), 4000);
-    }
+    prevBtn.addEventListener('click', () => goTo(currentIndex - 1));
+    nextBtn.addEventListener('click', () => goTo(currentIndex + 1));
+    finishBtns.forEach(btn => {
+      btn.addEventListener('click', () => setFinish(btn.dataset.acabado));
+    });
 
-    prev.addEventListener('click', () => goTo(current - 1));
-    next.addEventListener('click', () => goTo(current + 1));
-
-    // Pausar en hover
-    track.closest('.reviews__track-wrap').addEventListener('mouseenter', () => clearInterval(timer));
-    track.closest('.reviews__track-wrap').addEventListener('mouseleave', resetTimer);
-
-    resetTimer();
+    goTo(0);
+    setFinish('nogal');
   }
 
   /* Acordeón FAQ */
@@ -236,16 +289,60 @@
     }, { passive: true });
   }
 
+  /* Carrusel infinito de marcas/materiales con tooltip flotante */
+  function initBrandsMarquee() {
+    const track = document.getElementById('brandsTrack');
+    const tooltip = document.getElementById('brandsTooltip');
+    const tooltipName = document.getElementById('brandsTooltipName');
+    const tooltipCat  = document.getElementById('brandsTooltipCat');
+    const tooltipDesc = document.getElementById('brandsTooltipDesc');
+    if (!track || !tooltip) return;
+
+    const container = tooltip.parentElement; // .brands (position: relative)
+    const items = track.querySelectorAll('.brands__item');
+
+    function showTooltip(item) {
+      tooltipName.textContent = item.dataset.name;
+      tooltipCat.textContent  = item.dataset.cat;
+      tooltipDesc.textContent = item.dataset.desc;
+
+      const containerRect = container.getBoundingClientRect();
+      const itemRect = item.getBoundingClientRect();
+      const left = itemRect.left + itemRect.width / 2 - containerRect.left;
+      const top  = itemRect.top - containerRect.top;
+
+      tooltip.style.left = `${left}px`;
+      tooltip.style.top  = `${top}px`;
+      tooltip.classList.add('is-visible');
+
+      track.style.animationPlayState = 'paused';
+    }
+
+    function hideTooltip() {
+      tooltip.classList.remove('is-visible');
+      track.style.animationPlayState = 'running';
+    }
+
+    items.forEach(item => {
+      item.addEventListener('mouseenter', () => showTooltip(item));
+      item.addEventListener('focus', () => showTooltip(item));
+      item.addEventListener('mouseleave', hideTooltip);
+      item.addEventListener('blur', hideTooltip);
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initWoodCounter();
     initAlumnosCounter();
-    initHeroToggle();
+    initHeroSlider();
     initWaitlist();
     initScrollAnimations();
     initWhySlider();
-    initReviews();
+    initShowroom();
     initFaq();
     initNav();
     initFlipCards();
+    initBrandsMarquee();
+    initCourseVideos();
   });
 })();
